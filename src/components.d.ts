@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AirStockFinder {
+    }
     interface AirStockPrice {
         "stockSymbol": string;
     }
@@ -16,6 +18,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAirStockFinderElement extends Components.AirStockFinder, HTMLStencilElement {
+    }
+    var HTMLAirStockFinderElement: {
+        prototype: HTMLAirStockFinderElement;
+        new (): HTMLAirStockFinderElement;
+    };
     interface HTMLAirStockPriceElement extends Components.AirStockPrice, HTMLStencilElement {
     }
     var HTMLAirStockPriceElement: {
@@ -29,11 +37,14 @@ declare global {
         new (): HTMLUcSideDrawerElement;
     };
     interface HTMLElementTagNameMap {
+        "air-stock-finder": HTMLAirStockFinderElement;
         "air-stock-price": HTMLAirStockPriceElement;
         "uc-side-drawer": HTMLUcSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
+    interface AirStockFinder {
+    }
     interface AirStockPrice {
         "stockSymbol"?: string;
     }
@@ -42,6 +53,7 @@ declare namespace LocalJSX {
         "title"?: string;
     }
     interface IntrinsicElements {
+        "air-stock-finder": AirStockFinder;
         "air-stock-price": AirStockPrice;
         "uc-side-drawer": UcSideDrawer;
     }
@@ -50,6 +62,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "air-stock-finder": LocalJSX.AirStockFinder & JSXBase.HTMLAttributes<HTMLAirStockFinderElement>;
             "air-stock-price": LocalJSX.AirStockPrice & JSXBase.HTMLAttributes<HTMLAirStockPriceElement>;
             "uc-side-drawer": LocalJSX.UcSideDrawer & JSXBase.HTMLAttributes<HTMLUcSideDrawerElement>;
         }
