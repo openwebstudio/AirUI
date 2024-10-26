@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AirSpinner {
+    }
     interface AirStockFinder {
     }
     interface AirStockPrice {
@@ -22,6 +24,12 @@ export interface AirStockFinderCustomEvent<T> extends CustomEvent<T> {
     target: HTMLAirStockFinderElement;
 }
 declare global {
+    interface HTMLAirSpinnerElement extends Components.AirSpinner, HTMLStencilElement {
+    }
+    var HTMLAirSpinnerElement: {
+        prototype: HTMLAirSpinnerElement;
+        new (): HTMLAirSpinnerElement;
+    };
     interface HTMLAirStockFinderElementEventMap {
         "airSymbolSelected": string;
     }
@@ -52,12 +60,15 @@ declare global {
         new (): HTMLUcSideDrawerElement;
     };
     interface HTMLElementTagNameMap {
+        "air-spinner": HTMLAirSpinnerElement;
         "air-stock-finder": HTMLAirStockFinderElement;
         "air-stock-price": HTMLAirStockPriceElement;
         "uc-side-drawer": HTMLUcSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
+    interface AirSpinner {
+    }
     interface AirStockFinder {
         "onAirSymbolSelected"?: (event: AirStockFinderCustomEvent<string>) => void;
     }
@@ -69,6 +80,7 @@ declare namespace LocalJSX {
         "title"?: string;
     }
     interface IntrinsicElements {
+        "air-spinner": AirSpinner;
         "air-stock-finder": AirStockFinder;
         "air-stock-price": AirStockPrice;
         "uc-side-drawer": UcSideDrawer;
@@ -78,6 +90,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "air-spinner": LocalJSX.AirSpinner & JSXBase.HTMLAttributes<HTMLAirSpinnerElement>;
             "air-stock-finder": LocalJSX.AirStockFinder & JSXBase.HTMLAttributes<HTMLAirStockFinderElement>;
             "air-stock-price": LocalJSX.AirStockPrice & JSXBase.HTMLAttributes<HTMLAirStockPriceElement>;
             "uc-side-drawer": LocalJSX.UcSideDrawer & JSXBase.HTMLAttributes<HTMLUcSideDrawerElement>;
