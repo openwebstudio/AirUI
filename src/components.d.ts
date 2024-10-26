@@ -17,8 +17,23 @@ export namespace Components {
         "title": string;
     }
 }
+export interface AirStockFinderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAirStockFinderElement;
+}
 declare global {
+    interface HTMLAirStockFinderElementEventMap {
+        "airSymbolSelected": string;
+    }
     interface HTMLAirStockFinderElement extends Components.AirStockFinder, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAirStockFinderElementEventMap>(type: K, listener: (this: HTMLAirStockFinderElement, ev: AirStockFinderCustomEvent<HTMLAirStockFinderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAirStockFinderElementEventMap>(type: K, listener: (this: HTMLAirStockFinderElement, ev: AirStockFinderCustomEvent<HTMLAirStockFinderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAirStockFinderElement: {
         prototype: HTMLAirStockFinderElement;
@@ -44,6 +59,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AirStockFinder {
+        "onAirSymbolSelected"?: (event: AirStockFinderCustomEvent<string>) => void;
     }
     interface AirStockPrice {
         "stockSymbol"?: string;
