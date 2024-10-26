@@ -1,52 +1,13 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-    />
-    <title>Stencil Component Starter</title>
-    <style>
-      body {
-        font-family: sans-serif;
-      }
-
-      .side-nav ul {
-        list-style: none;
-      }
-
-      .side-nav li {
-        margin: 1rem 0;
-      }
-
-      .side-nav a {
-        text-decoration: none;
-        color: black;
-      }
-    </style>
-    <!-- 更新为现代模块加载方式 -->
-    <script type="module" src="/build/mycomponent.esm.js"></script>
-    <script nomodule src="/build/mycomponent.js"></script>
-  </head>
-  <body>
-    <button id="side-drawer-btn">Open Side Menu</button>
-    <uc-side-drawer title="Main Menu">
-      <nav class="side-nav">
-        <ul>
-          <li><a href="/">A Link</a></li>
-          <li><a href="/">Another Link</a></li>
-          <li><a href="/">A third Link</a></li>
-        </ul>
-      </nav>
-    </uc-side-drawer>
-
-    <script>
-      const sideDrawerButton = document.querySelector('#side-drawer-btn');
-      const sideDrawer = document.querySelector('uc-side-drawer');
-      sideDrawerButton.addEventListener('click', () => {
-        sideDrawer.open = !sideDrawer.open;
-      });
-    </script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="module" src="/build/mycomponent.esm.js"></script>
+  <script nomodule src="/build/mycomponent.js"></script>
+</head>
+<body>
+  <air-stock-price></air-stock-price>
+</body>
 </html>

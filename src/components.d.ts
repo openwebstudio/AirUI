@@ -6,12 +6,21 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AirStockPrice {
+    }
     interface UcSideDrawer {
-        "open": boolean;
+        "open": () => Promise<void>;
+        "opened": boolean;
         "title": string;
     }
 }
 declare global {
+    interface HTMLAirStockPriceElement extends Components.AirStockPrice, HTMLStencilElement {
+    }
+    var HTMLAirStockPriceElement: {
+        prototype: HTMLAirStockPriceElement;
+        new (): HTMLAirStockPriceElement;
+    };
     interface HTMLUcSideDrawerElement extends Components.UcSideDrawer, HTMLStencilElement {
     }
     var HTMLUcSideDrawerElement: {
@@ -19,15 +28,19 @@ declare global {
         new (): HTMLUcSideDrawerElement;
     };
     interface HTMLElementTagNameMap {
+        "air-stock-price": HTMLAirStockPriceElement;
         "uc-side-drawer": HTMLUcSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
+    interface AirStockPrice {
+    }
     interface UcSideDrawer {
-        "open"?: boolean;
+        "opened"?: boolean;
         "title"?: string;
     }
     interface IntrinsicElements {
+        "air-stock-price": AirStockPrice;
         "uc-side-drawer": UcSideDrawer;
     }
 }
@@ -35,6 +48,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "air-stock-price": LocalJSX.AirStockPrice & JSXBase.HTMLAttributes<HTMLAirStockPriceElement>;
             "uc-side-drawer": LocalJSX.UcSideDrawer & JSXBase.HTMLAttributes<HTMLUcSideDrawerElement>;
         }
     }
