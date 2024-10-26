@@ -1,0 +1,66 @@
+aside {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 30rem;
+  max-width: 80%;
+  height: 100vh;
+  background: #f3f3f3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  transition: left 0.3s ease-out;
+}
+
+:host([open]) aside {
+  left: 0;
+}
+
+header {
+  padding: 1rem;
+  background: black;
+  position: relative;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
+}
+
+header button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  color: white;
+  background: transparent;
+  font-size: 1.5rem;
+  border: none;
+}
+
+header button:focus {
+  outline: none;
+}
+
+#tabs{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+#tabs button {
+  width: 30%;
+  background: white;
+  color: black;
+  text-align: center;
+  border: 1px solid black;
+  font:inherit;
+  padding: 0.15rem 0;
+}
+
+#tabs button.active,
+#tabs button:hover,
+#tabs button:focus{
+  background: black;
+  color: white;
+}
