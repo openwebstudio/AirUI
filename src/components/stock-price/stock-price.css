@@ -1,7 +1,7 @@
 :host {
   display: block;
   max-width: 400px; /* 最大宽度 */
-  margin: auto; /* 居中 */
+  margin: 1rem; /* 居中 */
   padding: 1rem; /* 内边距 */
   font-family: Arial, sans-serif; /* 字体 */
   background-color: #f9f9f9; /* 背景颜色 */
