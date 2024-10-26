@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AirStockPrice {
+        "stockSymbol": string;
     }
     interface UcSideDrawer {
         "open": () => Promise<void>;
@@ -34,6 +35,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AirStockPrice {
+        "stockSymbol"?: string;
     }
     interface UcSideDrawer {
         "opened"?: boolean;

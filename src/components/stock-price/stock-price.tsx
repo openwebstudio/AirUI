@@ -1,4 +1,4 @@
-import { Component, h, State, Element } from "@stencil/core";
+import { Component, h, State, Element, Prop } from "@stencil/core";
 import { AV_API_KEY } from "../global/global";
 
 @Component({
@@ -12,6 +12,9 @@ export class StockPrice {
   @State() fetchedPrice: number;
   @State() StockUserInput: string;
   @State() stockInputValid = false;
+  @State() error: string;
+
+  @Prop() stockSymbol: string;
 
   onUserInput(event: Event) {
     this.StockUserInput = (event.target as HTMLInputElement).value;
@@ -23,15 +26,24 @@ export class StockPrice {
   }
   onFetchStockPrice(event: Event) {
     event.preventDefault();
-
     const stockSymbol = this.stockInput.value;
+    this.fetchStockPrice(stockSymbol);
+  }
 
-    // 使用 API 密钥正确地拼接 URL
+  componentDidLoad() {
+    if (this.stockSymbol) {
+      this.StockUserInput = this.stockSymbol;
+      this.stockInputValid = true;
+      this.fetchStockPrice(this.stockSymbol);
+    }
+  }
+
+  fetchStockPrice(stockSymbol: string) {
     fetch(
       `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=${AV_API_KEY}`
     )
       .then((res) => {
-        if (!res.ok) {
+        if (res.status !== 200) {
           throw new Error("Network response was not ok");
         }
         return res.json();
@@ -41,16 +53,24 @@ export class StockPrice {
         if (price) {
           this.fetchedPrice = parseFloat(price);
         } else {
-          console.error("Price data not found in response", parsedRes);
-          this.fetchedPrice = NaN;
+          this.error = null;
+          throw new Error("Invalid Symbol");
         }
       })
       .catch((err) => {
-        console.log("Fetch error:", err);
+        this.error = err.message;
+        this.fetchedPrice = undefined;
+        console.error("Fetch failed:", err);
       });
   }
-
   render() {
+    let dataContent = <p>Please enter a symbol</p>;
+    if (this.error) {
+      dataContent = <p>{this.error}</p>;
+    }
+    if (this.fetchedPrice) {
+      dataContent = <p>Price:${this.fetchedPrice}</p>;
+    }
     return [
       <form onSubmit={this.onFetchStockPrice.bind(this)}>
         <input
@@ -64,10 +84,7 @@ export class StockPrice {
         </button>
       </form>,
       <div>
-        <p>
-          Price:{" "}
-          {this.fetchedPrice ? `$${this.fetchedPrice.toFixed(2)}` : "N/A"}
-        </p>
+        <p>{dataContent}</p>
       </div>,
     ];
   }
