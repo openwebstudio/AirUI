@@ -16,16 +16,18 @@ export class StockFinder {
 
   onFindStocks(event: Event) {
     event.preventDefault();
-    const stockName = this.stockNameInput.value;
+    const stockName = this.stockNameInput.value.trim();
+    if (!stockName) return;
+
     fetch(
       `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${stockName}&apikey=${AV_API_KEY}`
     )
       .then((res) => res.json())
       .then((parsedRes) => {
-        this.searchResult = parsedRes["bestMatches"].map((match) => {
-          return { name: match["2. name"], symbol: match["1. symbol"] };
-        });
-        console.log(this.searchResult);
+        this.searchResult = parsedRes["bestMatches"].map((match) => ({
+          name: match["2. name"],
+          symbol: match["1. symbol"],
+        }));
       })
       .catch((err) => {
         console.error("Error fetching stock data", err);
@@ -38,17 +40,14 @@ export class StockFinder {
 
   render() {
     return [
-      <form onSubmit={this.onFindStocks.bind(this)}>
-        <input
-          id="stock-symbol"
-          ref={(el) => (this.stockNameInput = el)}
-        ></input>
+      <form onSubmit={(e) => this.onFindStocks(e)}>
+        <input id="stock-symbol" ref={(el) => (this.stockNameInput = el)} />
         <button type="submit">find!</button>
       </form>,
       <ul>
         {this.searchResult.map((result) => (
-          <li onClick={this.onSelectSymbol.bind(this,result.symbol)}>
-            <strong> - {result.name}</strong>
+          <li onClick={() => this.onSelectSymbol(result.symbol)}>
+            <strong>{result.symbol}</strong> - {result.name}
           </li>
         ))}
       </ul>,
