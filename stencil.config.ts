@@ -1,14 +1,14 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'air-components',
+  namespace: 'mycomponent',
   outputTargets:[
     {
       type: 'dist'
     },
-    //{
-    //  type: 'www',
-    //  serviceWorker: null
-    //}
+    {
+      type: 'www',
+      serviceWorker: null
+    }
   ]
 };

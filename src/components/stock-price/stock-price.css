@@ -1,93 +1,78 @@
 :host {
   display: block;
-  max-width: var(--max-width, 400px);
-  margin: var(--margin, 1rem);
-  padding: var(--padding, 1rem);
-  font-family: var(--font-family, Arial, sans-serif);
-  background-color: var(--background-color, #f9f9f9);
-  border-radius: var(--border-radius, 8px);
-  box-shadow: var(--box-shadow, 0 2px 10px rgba(0, 0, 0, 0.1));
-}
-
-:host(.error) {
-  background-color: var(--error-background-color, #f8d7da);
-  color: var(--error-color, #721c24);
+  max-width: 400px; /* 最大宽度 */
+  margin: 1rem; /* 居中 */
+  padding: 1rem; /* 内边距 */
+  font-family: Arial, sans-serif; /* 字体 */
+  background-color: #f9f9f9; /* 背景颜色 */
+  border-radius: 8px; /* 边角圆滑 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
 }
 
 form {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: var(--form-margin-bottom, 1rem);
+  display: flex; /* 使用弹性布局 */
+  justify-content: space-between; /* 子元素之间的空间 */
+  margin-bottom: 1rem; /* 底部间距 */
 }
 
 input {
-  flex: 1;
-  padding: var(--input-padding, 0.5rem);
-  border: 1px solid var(--input-border-color, #ddd);
-  border-radius: var(--input-border-radius, 4px);
-  font-size: var(--input-font-size, 1rem);
-  transition: border-color 0.3s;
+  flex: 1; /* 输入框占满空间 */
+  padding: 0.5rem; /* 内边距 */
+  border: 1px solid #ddd; /* 边框颜色 */
+  border-radius: 4px; /* 边角圆滑 */
+  font-size: 1rem; /* 字体大小 */
+  transition: border-color 0.3s; /* 边框颜色变化效果 */
 }
 
 input:focus {
-  border-color: var(--input-focus-border-color, #007bff);
-  outline: none;
+  border-color: #007bff; /* 聚焦时边框颜色 */
+  outline: none; /* 去掉默认轮廓 */
 }
 
 button {
-  padding: var(--button-padding, 0.5rem 1rem);
-  border: none;
-  border-radius: var(--button-border-radius, 4px);
-  background-color: var(--button-background-color, #007bff);
-  color: var(--button-color, white);
-  cursor: pointer;
-  transition: background-color 0.3s;
-  flex: 0 0 var(--button-width, 30%);
+  padding: 0.5rem 1rem; /* 内边距 */
+  border: none; /* 去掉边框 */
+  border-radius: 4px; /* 边角圆滑 */
+  background-color: #007bff; /* 按钮背景颜色 */
+  color: white; /* 按钮字体颜色 */
+  cursor: pointer; /* 鼠标指针 */
+  transition: background-color 0.3s; /* 背景颜色变化效果 */
+  flex: 0 0 30%; /* 按钮宽度为 30% */
 }
 
 button:hover {
-  background-color: var(--button-hover-background-color, #0056b3);
+  background-color: #0056b3; /* 悬停时按钮颜色 */
 }
 
 .price-container {
-  margin-top: var(--price-container-margin-top, 1rem);
-  padding: var(--price-container-padding, 1rem);
-  border: 1px solid var(--price-container-border-color, #007bff);
-  background-color: var(--price-container-background-color, #e9f5ff);
-  border-radius: var(--price-container-border-radius, 4px);
-  font-size: var(--price-container-font-size, 1.5rem);
-  color: var(--price-container-color, #007bff);
-  text-align: center;
+  margin-top: 1rem; /* 在价格与表单之间增加间距 */
+  padding: 1rem; /* 内边距 */
+  border: 1px solid #007bff; /* 边框颜色 */
+  background-color: #e9f5ff; /* 背景颜色 */
+  border-radius: 4px; /* 边角圆滑 */
+  font-size: 1.5rem; /* 增大价格字体 */
+  color: #007bff; /* 价格字体颜色 */
+  text-align: center; /* 居中显示 */
 }
 
 .error-message {
-  color: var(--error-message-color, red);
-  font-size: var(--error-message-font-size, 1rem);
+  color: red; /* 错误信息的字体颜色 */
+  font-size: 1rem; /* 错误信息字体大小 */
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  list-style-type: none; /* 去掉列表样式 */
+  padding: 0; /* 去掉内边距 */
+  margin: 0; /* 去掉外边距 */
 }
 
 li {
-  padding: var(--list-item-padding, 0.5rem);
-  border-bottom: 1px solid var(--list-item-border-color, #ddd);
-  cursor: pointer;
-  transition: background-color 0.3s;
+  padding: 0.5rem; /* 内边距 */
+  border-bottom: 1px solid #ddd; /* 底部边框 */
+  cursor: pointer; /* 鼠标指针 */
+  transition: background-color 0.3s; /* 背景颜色变化效果 */
 }
 
 li:hover {
-  background-color: var(--list-item-hover-background-color, #f0f0f0);
-}
-
-/* Loader */
-.loader {
-  height: var(--loader-height, 60px);
-  aspect-ratio: 1;
-  --c:no-repeat linear-gradient(#fff 0 0);
-  background: var(--c), var(--c), var(--c), var(--c);
-  background-size: 33.4% 33.4%;
-  animation: l7 1.5s infinite linear;
+  background-color: #f0f0f0; /* 悬停时背景颜色 */
 }

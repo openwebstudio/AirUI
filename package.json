@@ -1,5 +1,5 @@
 {
-  "name": "air-components",
+  "name": "my-component",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "module": "dist/esm/index.js",
