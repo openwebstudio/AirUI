@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AirButton {
+    }
     interface AirStockFinder {
     }
     interface AirStockPrice {
@@ -22,6 +24,12 @@ export interface AirStockFinderCustomEvent<T> extends CustomEvent<T> {
     target: HTMLAirStockFinderElement;
 }
 declare global {
+    interface HTMLAirButtonElement extends Components.AirButton, HTMLStencilElement {
+    }
+    var HTMLAirButtonElement: {
+        prototype: HTMLAirButtonElement;
+        new (): HTMLAirButtonElement;
+    };
     interface HTMLAirStockFinderElementEventMap {
         "airSymbolSelected": string;
     }
@@ -52,12 +60,15 @@ declare global {
         new (): HTMLUcSideDrawerElement;
     };
     interface HTMLElementTagNameMap {
+        "air-button": HTMLAirButtonElement;
         "air-stock-finder": HTMLAirStockFinderElement;
         "air-stock-price": HTMLAirStockPriceElement;
         "uc-side-drawer": HTMLUcSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
+    interface AirButton {
+    }
     interface AirStockFinder {
         "onAirSymbolSelected"?: (event: AirStockFinderCustomEvent<string>) => void;
     }
@@ -69,6 +80,7 @@ declare namespace LocalJSX {
         "title"?: string;
     }
     interface IntrinsicElements {
+        "air-button": AirButton;
         "air-stock-finder": AirStockFinder;
         "air-stock-price": AirStockPrice;
         "uc-side-drawer": UcSideDrawer;
@@ -78,6 +90,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "air-button": LocalJSX.AirButton & JSXBase.HTMLAttributes<HTMLAirButtonElement>;
             "air-stock-finder": LocalJSX.AirStockFinder & JSXBase.HTMLAttributes<HTMLAirStockFinderElement>;
             "air-stock-price": LocalJSX.AirStockPrice & JSXBase.HTMLAttributes<HTMLAirStockPriceElement>;
             "uc-side-drawer": LocalJSX.UcSideDrawer & JSXBase.HTMLAttributes<HTMLUcSideDrawerElement>;
