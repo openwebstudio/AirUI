@@ -7,6 +7,11 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AirButton {
+        "content": string;
+        "disabled": boolean;
+        "icon": string;
+        "loading": boolean;
+        "suffixIcon": string;
     }
     interface AirStockFinder {
     }
@@ -68,6 +73,11 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AirButton {
+        "content"?: string;
+        "disabled"?: boolean;
+        "icon"?: string;
+        "loading"?: boolean;
+        "suffixIcon"?: string;
     }
     interface AirStockFinder {
         "onAirSymbolSelected"?: (event: AirStockFinderCustomEvent<string>) => void;
