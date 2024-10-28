@@ -1,34 +1,33 @@
 :host {
-    display: inline-block; /* inline-block 以便于使用在文本内 */
-  }
-  
-  .air-button {
-    padding: 0.75rem 1.5rem; /* 内边距，增加按钮大小 */
-    border: none; /* 去掉边框 */
-    border-radius: 25px; /* 更大圆角，使其更现代 */
-    background: linear-gradient(135deg, #007bff, #0056b3); /* 渐变背景 */
-    color: white; /* 按钮字体颜色 */
-    cursor: pointer; /* 鼠标指针 */
-    font-size: 1rem; /* 字体大小 */
-    font-weight: bold; /* 字体加粗 */
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); /* 更柔和的阴影 */
-    transition: background-color 0.3s, transform 0.2s; /* 背景颜色和缩放效果 */
-  }
-  
-  .air-button:hover {
-    background: linear-gradient(135deg, #0056b3, #007bff); /* 悬停时渐变反转 */
-    transform: translateY(-2px); /* 悬停时微微上升 */
-  }
-  
-  .air-button:active {
-    transform: translateY(0); /* 点击时恢复位置 */
-  }
-  
-  /* 禁用状态样式 */
-  .air-button:disabled {
-    background: #e0e0e0; /* 禁用时的背景颜色 */
-    color: #a0a0a0; /* 禁用时的字体颜色 */
-    cursor: not-allowed; /* 禁用状态的鼠标指针 */
-    box-shadow: none; /* 去掉阴影 */
-  }
-  
+  display: inline-block; /* inline-block 以便于使用在文本内 */
+}
+
+.air-button {
+  padding: var(--button-padding, 0.75rem 1.5rem); /* 默认内边距 */
+  border: none; /* 去掉边框 */
+  border-radius: var(--button-border-radius, 25px); /* 默认圆角 */
+  background: var(--button-background, linear-gradient(135deg, #007bff, #0056b3)); /* 默认渐变背景 */
+  color: var(--button-color, white); /* 默认字体颜色 */
+  cursor: pointer; /* 鼠标指针 */
+  font-size: var(--button-font-size, 1rem); /* 默认字体大小 */
+  font-weight: bold; /* 字体加粗 */
+  box-shadow: var(--button-box-shadow, 0 4px 15px rgba(0, 123, 255, 0.3)); /* 默认阴影 */
+  transition: background-color 0.3s, transform 0.2s; /* 背景颜色和缩放效果 */
+}
+
+.air-button:hover {
+  background: var(--button-hover-background, linear-gradient(135deg, #0056b3, #007bff)); /* 悬停时渐变反转 */
+  transform: translateY(-2px); /* 悬停时微微上升 */
+}
+
+.air-button:active {
+  transform: translateY(0); /* 点击时恢复位置 */
+}
+
+/* 禁用状态样式 */
+.air-button:disabled {
+  background: var(--button-disabled-background, #e0e0e0); /* 禁用时的背景颜色 */
+  color: var(--button-disabled-color, #a0a0a0); /* 禁用时的字体颜色 */
+  cursor: not-allowed; /* 禁用状态的鼠标指针 */
+  box-shadow: none; /* 去掉阴影 */
+}

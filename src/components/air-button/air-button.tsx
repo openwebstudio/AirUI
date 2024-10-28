@@ -23,6 +23,8 @@ export class AirButton {
             'air-button': true,
             'is-disabled': this.disabled,
             'is-loading': this.loading,
+            // 允许外部通过class扩展样式
+            [this.el.className]: true,
           }}
           disabled={this.disabled}
           aria-busy={this.loading ? 'true' : null}
@@ -36,9 +38,6 @@ export class AirButton {
 
           {/* 显示 content 内容 */}
           <span class="air-button__text">{this.content}</span>
-
-          {/* 后缀图标 */}
-          {this.suffixIcon && <span class="air-button__suffix-icon">{this.suffixIcon}</span>}
         </button>
       </Host>
     );
