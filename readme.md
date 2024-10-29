@@ -1,7 +1,7 @@
 
 # Air-Components
 
-![Air-Components Logo](./src/assets/air-components-logo.svg)
+![Air-Components Logo](./src/assets/AIR-COMPONENT-BOARD.png.svg)
 
 **Air-Components** 是一个现代化的 Web Components 组件库，旨在提供简单、高效和个性化的组件解决方案，帮助开发者更快速地构建优雅的 UI 界面。
 
