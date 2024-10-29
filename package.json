@@ -1,6 +1,6 @@
 {
   "name": "air-components",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Stencil Component Starter",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/SisyphusZheng/AirComponents.git"
   },
   "author": "Ionic Team",
   "license": "MIT",
