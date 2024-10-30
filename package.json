@@ -1,7 +1,7 @@
 {
   "name": "air-components",
-  "version": "0.0.3",
-  "description": "Stencil Component Starter",
+  "version": "0.0.4",
+  "description": "Air-Components is a lightweight and customizable Web Components library designed to help developers quickly create elegant user interfaces with modern design principles.",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
@@ -22,10 +22,11 @@
     "type": "git",
     "url": "https://github.com/SisyphusZheng/AirComponents.git"
   },
-  "author": "Ionic Team",
+  "author": "zhi@sisyphus",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/SisyphusZheng/AirComponents.git"
   },
-  "homepage": "https://github.com/ionic-team/stencil"
+  "homepage": "https://github.com/SisyphusZheng/AirComponents.git"
+
 }
