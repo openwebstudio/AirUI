@@ -1,31 +1,39 @@
 {
-  "name": "air-components",
-  "version": "0.0.4",
-  "description": "Air-Components is a lightweight and customizable Web Components library designed to help developers quickly create elegant user interfaces with modern design principles.",
-  "module": "dist/esm/index.js",
-  "main": "dist/index.js",
-  "types": "dist/types/components.d.ts",
+  "name": "stencil-component-example",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.cjs.js",
+  "module": "./dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/stencil-component-example/stencil-component-example.esm.js",
   "files": [
-    "dist/"
+    "dist/",
+    "loader/"
   ],
   "scripts": {
-    "build": "stencil build",
+    "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
   },
-  "devDependencies": {
-    "@stencil/core": "^4.22.2"
+  "dependencies": {
+    "@stencil/core": "^4.7.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SisyphusZheng/AirComponents.git"
-  },
-  "author": "zhi@sisyphus",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SisyphusZheng/AirComponents.git"
-  },
-  "homepage": "https://github.com/SisyphusZheng/AirComponents.git"
+  "devDependencies": {
+    "@stencil/postcss": "^2.1.0",
+    "@stencil/sass": "^2.0.0",
+    "@tailwindcss/forms": "^0.5.3",
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.14",
+    "stencil-tailwind-plugin": "^1.8.0",
+    "storybook-addon-stencil": "^0.2.2",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^5.2.2"
+  }
 }

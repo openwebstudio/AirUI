@@ -8,8 +8,6 @@
       "dom",
       "es2017"
     ],
-      "types": ["@stencil/core"],
-      // 其他配置
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2017",
@@ -19,9 +17,7 @@
     "jsxFactory": "h"
   },
   "include": [
-    "src/**/*",
-    "types/jsx.d.ts",
-     "src/@types/**/*"
+    "src"
   ],
   "exclude": [
     "node_modules"

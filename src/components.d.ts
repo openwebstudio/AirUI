@@ -6,104 +6,207 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AirAvatar {
+        "bgColor": string;
+        "name": string;
+        "rounded": boolean;
+        "size": string;
+    }
     interface AirButton {
+        "autoWidth": boolean;
+        "circle": boolean;
         "content": string;
         "disabled": boolean;
+        "ghost": boolean;
         "icon": string;
         "loading": boolean;
+        "plain": boolean;
+        "round": boolean;
+        "size": 'big' | 'small' | 'medium';
         "suffixIcon": string;
+        "type": 'primary' | 'success' | 'info' | 'warning' | 'danger' | '';
     }
-    interface AirStockFinder {
-    }
-    interface AirStockPrice {
-        "stockSymbol": string;
-    }
-    interface UcSideDrawer {
-        "open": () => Promise<void>;
-        "opened": boolean;
+    interface AirCard {
+        "description": string;
+        "imageUrl": string;
+        "showButton": boolean;
+        "tags": string[];
         "title": string;
     }
-}
-export interface AirStockFinderCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLAirStockFinderElement;
+    interface AirExample {
+    }
+    interface AirFootNav {
+    }
+    interface AirLinkButton {
+        "href": string;
+        "icon": string;
+        "label": string;
+        "textColor": string;
+    }
+    interface AirRow {
+    }
+    interface AirSideDrawer {
+        "drawerTitle": string;
+        "open": () => Promise<void>;
+        "opened": boolean;
+    }
+    interface AirTopbar {
+        "defaultBgColor": string;
+        "gradientBgColor": string;
+        "scrollBgColor": string;
+        "scrolledTextColor": string;
+        "shadowEffect": boolean;
+        "textColor": string;
+        "titleText": string;
+        "titleTextColor": string;
+    }
 }
 declare global {
+    interface HTMLAirAvatarElement extends Components.AirAvatar, HTMLStencilElement {
+    }
+    var HTMLAirAvatarElement: {
+        prototype: HTMLAirAvatarElement;
+        new (): HTMLAirAvatarElement;
+    };
     interface HTMLAirButtonElement extends Components.AirButton, HTMLStencilElement {
     }
     var HTMLAirButtonElement: {
         prototype: HTMLAirButtonElement;
         new (): HTMLAirButtonElement;
     };
-    interface HTMLAirStockFinderElementEventMap {
-        "airSymbolSelected": string;
+    interface HTMLAirCardElement extends Components.AirCard, HTMLStencilElement {
     }
-    interface HTMLAirStockFinderElement extends Components.AirStockFinder, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLAirStockFinderElementEventMap>(type: K, listener: (this: HTMLAirStockFinderElement, ev: AirStockFinderCustomEvent<HTMLAirStockFinderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLAirStockFinderElementEventMap>(type: K, listener: (this: HTMLAirStockFinderElement, ev: AirStockFinderCustomEvent<HTMLAirStockFinderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLAirStockFinderElement: {
-        prototype: HTMLAirStockFinderElement;
-        new (): HTMLAirStockFinderElement;
+    var HTMLAirCardElement: {
+        prototype: HTMLAirCardElement;
+        new (): HTMLAirCardElement;
     };
-    interface HTMLAirStockPriceElement extends Components.AirStockPrice, HTMLStencilElement {
+    interface HTMLAirExampleElement extends Components.AirExample, HTMLStencilElement {
     }
-    var HTMLAirStockPriceElement: {
-        prototype: HTMLAirStockPriceElement;
-        new (): HTMLAirStockPriceElement;
+    var HTMLAirExampleElement: {
+        prototype: HTMLAirExampleElement;
+        new (): HTMLAirExampleElement;
     };
-    interface HTMLUcSideDrawerElement extends Components.UcSideDrawer, HTMLStencilElement {
+    interface HTMLAirFootNavElement extends Components.AirFootNav, HTMLStencilElement {
     }
-    var HTMLUcSideDrawerElement: {
-        prototype: HTMLUcSideDrawerElement;
-        new (): HTMLUcSideDrawerElement;
+    var HTMLAirFootNavElement: {
+        prototype: HTMLAirFootNavElement;
+        new (): HTMLAirFootNavElement;
+    };
+    interface HTMLAirLinkButtonElement extends Components.AirLinkButton, HTMLStencilElement {
+    }
+    var HTMLAirLinkButtonElement: {
+        prototype: HTMLAirLinkButtonElement;
+        new (): HTMLAirLinkButtonElement;
+    };
+    interface HTMLAirRowElement extends Components.AirRow, HTMLStencilElement {
+    }
+    var HTMLAirRowElement: {
+        prototype: HTMLAirRowElement;
+        new (): HTMLAirRowElement;
+    };
+    interface HTMLAirSideDrawerElement extends Components.AirSideDrawer, HTMLStencilElement {
+    }
+    var HTMLAirSideDrawerElement: {
+        prototype: HTMLAirSideDrawerElement;
+        new (): HTMLAirSideDrawerElement;
+    };
+    interface HTMLAirTopbarElement extends Components.AirTopbar, HTMLStencilElement {
+    }
+    var HTMLAirTopbarElement: {
+        prototype: HTMLAirTopbarElement;
+        new (): HTMLAirTopbarElement;
     };
     interface HTMLElementTagNameMap {
+        "air-avatar": HTMLAirAvatarElement;
         "air-button": HTMLAirButtonElement;
-        "air-stock-finder": HTMLAirStockFinderElement;
-        "air-stock-price": HTMLAirStockPriceElement;
-        "uc-side-drawer": HTMLUcSideDrawerElement;
+        "air-card": HTMLAirCardElement;
+        "air-example": HTMLAirExampleElement;
+        "air-foot-nav": HTMLAirFootNavElement;
+        "air-link-button": HTMLAirLinkButtonElement;
+        "air-row": HTMLAirRowElement;
+        "air-side-drawer": HTMLAirSideDrawerElement;
+        "air-topbar": HTMLAirTopbarElement;
     }
 }
 declare namespace LocalJSX {
+    interface AirAvatar {
+        "bgColor"?: string;
+        "name"?: string;
+        "rounded"?: boolean;
+        "size"?: string;
+    }
     interface AirButton {
+        "autoWidth"?: boolean;
+        "circle"?: boolean;
         "content"?: string;
         "disabled"?: boolean;
+        "ghost"?: boolean;
         "icon"?: string;
         "loading"?: boolean;
+        "plain"?: boolean;
+        "round"?: boolean;
+        "size"?: 'big' | 'small' | 'medium';
         "suffixIcon"?: string;
+        "type"?: 'primary' | 'success' | 'info' | 'warning' | 'danger' | '';
     }
-    interface AirStockFinder {
-        "onAirSymbolSelected"?: (event: AirStockFinderCustomEvent<string>) => void;
-    }
-    interface AirStockPrice {
-        "stockSymbol"?: string;
-    }
-    interface UcSideDrawer {
-        "opened"?: boolean;
+    interface AirCard {
+        "description"?: string;
+        "imageUrl"?: string;
+        "showButton"?: boolean;
+        "tags"?: string[];
         "title"?: string;
     }
+    interface AirExample {
+    }
+    interface AirFootNav {
+    }
+    interface AirLinkButton {
+        "href"?: string;
+        "icon"?: string;
+        "label"?: string;
+        "textColor"?: string;
+    }
+    interface AirRow {
+    }
+    interface AirSideDrawer {
+        "drawerTitle"?: string;
+        "opened"?: boolean;
+    }
+    interface AirTopbar {
+        "defaultBgColor"?: string;
+        "gradientBgColor"?: string;
+        "scrollBgColor"?: string;
+        "scrolledTextColor"?: string;
+        "shadowEffect"?: boolean;
+        "textColor"?: string;
+        "titleText"?: string;
+        "titleTextColor"?: string;
+    }
     interface IntrinsicElements {
+        "air-avatar": AirAvatar;
         "air-button": AirButton;
-        "air-stock-finder": AirStockFinder;
-        "air-stock-price": AirStockPrice;
-        "uc-side-drawer": UcSideDrawer;
+        "air-card": AirCard;
+        "air-example": AirExample;
+        "air-foot-nav": AirFootNav;
+        "air-link-button": AirLinkButton;
+        "air-row": AirRow;
+        "air-side-drawer": AirSideDrawer;
+        "air-topbar": AirTopbar;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "air-avatar": LocalJSX.AirAvatar & JSXBase.HTMLAttributes<HTMLAirAvatarElement>;
             "air-button": LocalJSX.AirButton & JSXBase.HTMLAttributes<HTMLAirButtonElement>;
-            "air-stock-finder": LocalJSX.AirStockFinder & JSXBase.HTMLAttributes<HTMLAirStockFinderElement>;
-            "air-stock-price": LocalJSX.AirStockPrice & JSXBase.HTMLAttributes<HTMLAirStockPriceElement>;
-            "uc-side-drawer": LocalJSX.UcSideDrawer & JSXBase.HTMLAttributes<HTMLUcSideDrawerElement>;
+            "air-card": LocalJSX.AirCard & JSXBase.HTMLAttributes<HTMLAirCardElement>;
+            "air-example": LocalJSX.AirExample & JSXBase.HTMLAttributes<HTMLAirExampleElement>;
+            "air-foot-nav": LocalJSX.AirFootNav & JSXBase.HTMLAttributes<HTMLAirFootNavElement>;
+            "air-link-button": LocalJSX.AirLinkButton & JSXBase.HTMLAttributes<HTMLAirLinkButtonElement>;
+            "air-row": LocalJSX.AirRow & JSXBase.HTMLAttributes<HTMLAirRowElement>;
+            "air-side-drawer": LocalJSX.AirSideDrawer & JSXBase.HTMLAttributes<HTMLAirSideDrawerElement>;
+            "air-topbar": LocalJSX.AirTopbar & JSXBase.HTMLAttributes<HTMLAirTopbarElement>;
         }
     }
 }

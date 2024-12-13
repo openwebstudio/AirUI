@@ -1,6 +1,6 @@
 # In early development version, currently unavailable
 
-![Air-Components Logo](./src/assets/AIR-COMPONENT-BOARD.png)
+![Air-Components Logo](./src/assets/air-components-board.png)
 
 **Air-Components** is a modern Web Components library designed to provide simple, efficient, and personalized component solutions, helping developers build elegant UI interfaces more quickly.
 

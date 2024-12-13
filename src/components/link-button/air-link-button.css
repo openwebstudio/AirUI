@@ -1,0 +1,21 @@
+:host {
+  display: inline-block;
+}
+
+a {
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
