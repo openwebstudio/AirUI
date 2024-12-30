@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义按钮样式 */
+:host {
+  display: inline-block;
+  --button-color: #3490dc; /* 默认按钮颜色 */
+}
+
+.button {
+  @apply relative inline-flex items-center justify-center font-medium transition-all duration-200 ease-in-out focus:outline-none;
+  background-color: var(--button-color); /* 使用动态颜色变量 */
+}
+
+/* 大小样式 */
+.size-small {
+  @apply px-3 py-1.5 text-sm;
+}
+
+.size-medium {
+  @apply px-4 py-2 text-base;
+}
+
+.size-large {
+  @apply px-6 py-3 text-lg;
+}
+
+/* Variant 样式分类 */
+.variant-default {
+  @apply text-gray-700 bg-gray-100 border border-gray-300 rounded-lg;
+}
+
+.variant-primary {
+  @apply text-white bg-blue-500 border border-blue-500 rounded-lg;
+}
+
+.variant-success {
+  @apply text-white bg-green-500 border border-green-500 rounded-lg;
+}
+
+.variant-info {
+  @apply text-white bg-teal-500 border border-teal-500 rounded-lg;
+}
+
+.variant-warning {
+  @apply text-black bg-yellow-400 border border-yellow-500 rounded-lg;
+}
+
+.variant-danger {
+  @apply text-white bg-red-500 border border-red-500 rounded-lg;
+}
+
+.variant-ghost {
+  @apply text-gray-700 bg-transparent border border-gray-300 rounded-lg;
+}
+
+/* 动态样式 */
+.button:hover:not(:disabled) {
+  @apply opacity-90;
+}
+
+.button:active:not(:disabled) {
+  @apply scale-95;
+}
+
+.button:disabled {
+  @apply bg-gray-300 text-gray-500 cursor-not-allowed;
+}
+
+.button.loading {
+  @apply cursor-wait;
+}
+
+/* 图标和文本样式 */
+.air-button__icon,
+.air-button__suffix-icon {
+  @apply flex-shrink-0;
+}
+
+.air-button__text {
+  @apply flex-1 text-center;
+}
+
+/* 加载状态动画 */
+.air-button__loading-icon {
+  @apply animate-spin;
+}
+
+/* 确保加载图标、文本和后缀图标适配 */
+.air-button__icon,
+.air-button__loading-icon,
+.air-button__suffix-icon {
+  @apply inline-block;
+}
+

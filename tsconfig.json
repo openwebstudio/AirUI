@@ -14,10 +14,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "jsx": "react",
-    "jsxFactory": "h"
+    "jsxFactory": "h",
+    "types": [
+      "@stencil/core/testing",  // 添加对 Stencil 测试工具的支持
+      "jest"  // 添加 Jest 类型支持
+    ]
   },
   "include": [
-    "src"
+    "src",
+    "node_modules/@stencil/core/testing"  // 确保 TypeScript 包含测试相关的文件
   ],
   "exclude": [
     "node_modules"

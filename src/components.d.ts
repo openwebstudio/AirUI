@@ -13,18 +13,13 @@ export namespace Components {
         "size": string;
     }
     interface AirButton {
-        "autoWidth": boolean;
-        "circle": boolean;
-        "content": string;
+        "color": string;
         "disabled": boolean;
-        "ghost": boolean;
         "icon": string;
         "loading": boolean;
-        "plain": boolean;
-        "round": boolean;
-        "size": 'big' | 'small' | 'medium';
+        "size": 'small' | 'medium' | 'large';
         "suffixIcon": string;
-        "type": 'primary' | 'success' | 'info' | 'warning' | 'danger' | '';
+        "variant": 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'ghost';
     }
     interface AirCard {
         "description": string;
@@ -136,18 +131,13 @@ declare namespace LocalJSX {
         "size"?: string;
     }
     interface AirButton {
-        "autoWidth"?: boolean;
-        "circle"?: boolean;
-        "content"?: string;
+        "color"?: string;
         "disabled"?: boolean;
-        "ghost"?: boolean;
         "icon"?: string;
         "loading"?: boolean;
-        "plain"?: boolean;
-        "round"?: boolean;
-        "size"?: 'big' | 'small' | 'medium';
+        "size"?: 'small' | 'medium' | 'large';
         "suffixIcon"?: string;
-        "type"?: 'primary' | 'success' | 'info' | 'warning' | 'danger' | '';
+        "variant"?: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'ghost';
     }
     interface AirCard {
         "description"?: string;
