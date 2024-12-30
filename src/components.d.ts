@@ -13,13 +13,25 @@ export namespace Components {
         "size": string;
     }
     interface AirButton {
-        "color": string;
+        "color": | "default"
+    | "primary"
+    | "success"
+    | "info"
+    | "warning"
+    | "danger"
+    | "ghost";
         "disabled": boolean;
         "icon": string;
         "loading": boolean;
-        "size": 'small' | 'medium' | 'large';
+        "selected": boolean;
+        "size": "small" | "medium" | "large";
         "suffixIcon": string;
-        "variant": 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'ghost';
+        "variant": | "solid"
+    | "outline"
+    | "text"
+    | "outline"
+    | "neo"
+    | "default";
     }
     interface AirCard {
         "description": string;
@@ -131,13 +143,25 @@ declare namespace LocalJSX {
         "size"?: string;
     }
     interface AirButton {
-        "color"?: string;
+        "color"?: | "default"
+    | "primary"
+    | "success"
+    | "info"
+    | "warning"
+    | "danger"
+    | "ghost";
         "disabled"?: boolean;
         "icon"?: string;
         "loading"?: boolean;
-        "size"?: 'small' | 'medium' | 'large';
+        "selected"?: boolean;
+        "size"?: "small" | "medium" | "large";
         "suffixIcon"?: string;
-        "variant"?: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'ghost';
+        "variant"?: | "solid"
+    | "outline"
+    | "text"
+    | "outline"
+    | "neo"
+    | "default";
     }
     interface AirCard {
         "description"?: string;
