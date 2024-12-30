@@ -25,27 +25,85 @@
     <script nomodule src="./build/stencil-component-example.js"></script>
   </head>
   <body>
-    <div class="flex justify-between p-4">
-      <button
-        class="bg-blue-500 text-white px-4 py-2 rounded-md"
-        onclick="openSideDrawer()"
-      >
-        Open Side Drawer
-      </button>
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <!-- 默认按钮 -->
+      <div>
+        <air-button size="small" variant="default">默认小</air-button>
+        <air-button size="medium" variant="default">默认中</air-button>
+        <air-button size="large" variant="default">默认大</air-button>
+      </div>
+    
+      <!-- 主要按钮 -->
+      <div>
+        <air-button size="small" variant="primary" color="blue">主要小</air-button>
+        <air-button size="medium" variant="primary" color="blue">主要中</air-button>
+        <air-button size="large" variant="primary" color="blue">主要大</air-button>
+      </div>
+    
+      <!-- 成功按钮 -->
+      <div>
+        <air-button size="small" variant="success" color="green">成功小</air-button>
+        <air-button size="medium" variant="success" color="green">成功中</air-button>
+        <air-button size="large" variant="success" color="green">成功大</air-button>
+      </div>
+    
+      <!-- 信息按钮 -->
+      <div>
+        <air-button size="small" variant="info" color="teal">信息小</air-button>
+        <air-button size="medium" variant="info" color="teal">信息中</air-button>
+        <air-button size="large" variant="info" color="teal">信息大</air-button>
+      </div>
+    
+      <!-- 警告按钮 -->
+      <div>
+        <air-button size="small" variant="warning" color="yellow">警告小</air-button>
+        <air-button size="medium" variant="warning" color="yellow">警告中</air-button>
+        <air-button size="large" variant="warning" color="yellow">警告大</air-button>
+      </div>
+    
+      <!-- 危险按钮 -->
+      <div>
+        <air-button size="small" variant="danger" color="red">危险小</air-button>
+        <air-button size="medium" variant="danger" color="red">危险中</air-button>
+        <air-button size="large" variant="danger" color="red">危险大</air-button>
+      </div>
+    
+      <!-- 幽灵按钮 -->
+      <div>
+        <air-button size="small" variant="ghost">幽灵小</air-button>
+        <air-button size="medium" variant="ghost">幽灵中</air-button>
+        <air-button size="large" variant="ghost">幽灵大</air-button>
+      </div>
+    
+      <!-- 带图标按钮 -->
+      <div>
+        <air-button size="small" variant="primary" icon="⭐">小图标</air-button>
+        <air-button size="medium" variant="primary" icon="🌟">中图标</air-button>
+        <air-button size="large" variant="primary" icon="💫">大图标</air-button>
+      </div>
+    
+      <!-- 带后缀图标按钮 -->
+      <div>
+        <air-button size="small" variant="secondary" suffix-icon="➡️">小后缀</air-button>
+        <air-button size="medium" variant="secondary" suffix-icon="➡️">中后缀</air-button>
+        <air-button size="large" variant="secondary" suffix-icon="➡️">大后缀</air-button>
+      </div>
+    
+      <!-- 加载状态按钮 -->
+      <div>
+        <air-button size="small" variant="primary" loading="true">加载小</air-button>
+        <air-button size="medium" variant="primary" loading="true">加载中</air-button>
+        <air-button size="large" variant="primary" loading="true">加载大</air-button>
+      </div>
+    
+      <!-- 禁用按钮 -->
+      <div>
+        <air-button size="small" variant="primary" disabled="true">禁用小</air-button>
+        <air-button size="medium" variant="primary" disabled="true">禁用中</air-button>
+        <air-button size="large" variant="primary" disabled="true">禁用大</air-button>
+      </div>
     </div>
-  
-    <!-- Side Drawer Component -->
-    <air-side-drawer
-      drawer-title="Side Drawer Example"
-      opened="false"
-    ></air-side-drawer>
-  
-    <script>
-      function openSideDrawer() {
-        const sideDrawer = document.querySelector('air-side-drawer');
-        sideDrawer.open();  // 调用组件的 open 方法打开侧边抽屉
-      }
-    </script>
-  </main>
+    
+    
   </body>
 </html>
