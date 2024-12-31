@@ -7,29 +7,14 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type      | Default     |
-| ------------- | -------------- | ----------- | --------- | ----------- |
-| `cardContent` | `card-content` |             | `string`  | `undefined` |
-| `cardTitle`   | `card-title`   |             | `string`  | `undefined` |
-| `padding`     | `padding`      |             | `string`  | `'p-6'`     |
-| `rounded`     | `rounded`      |             | `boolean` | `true`      |
-| `shadow`      | `shadow`       |             | `boolean` | `true`      |
-| `showButton`  | `show-button`  |             | `boolean` | `false`     |
-| `width`       | `width`        |             | `string`  | `''`        |
+| Property      | Attribute     | Description | Type       | Default     |
+| ------------- | ------------- | ----------- | ---------- | ----------- |
+| `description` | `description` |             | `string`   | `undefined` |
+| `imageUrl`    | `image-url`   |             | `string`   | `undefined` |
+| `showButton`  | `show-button` |             | `boolean`  | `true`      |
+| `tags`        | --            |             | `string[]` | `[]`        |
+| `title`       | `title`       |             | `string`   | `undefined` |
 
-
-## Dependencies
-
-### Depends on
-
-- [air-button](../button)
-
-### Graph
-```mermaid
-graph TD;
-  air-card --> air-button
-  style air-card fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 
