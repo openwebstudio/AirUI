@@ -12,7 +12,9 @@
   "unpkg": "dist/stencil-component-example/stencil-component-example.esm.js",
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "stencil build --docs",
@@ -50,6 +52,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aircomponents/Components.git"
+    "url": "git+https://github.com/SisyphusZheng/Components.git"
   }
 }
