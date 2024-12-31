@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    tags:
-      - 'v*.*.*'
 
 jobs:
   build-and-publish:
@@ -21,28 +19,29 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
+          cache: 'yarn'
 
       # 配置 npm 认证（包括 GitHub 和 npm）
-      - name: Configure npm registry and authenticate
+      - name: Configure yarn registry and authenticate
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       # 安装依赖
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies with yarn
+        run: yarn install
 
       # 构建项目
-      - name: Build project
-        run: npm run build
+      - name: Build project with yarn
+        run: yarn build
 
-      # 发布到 GitHub Packages
-      - name: Publish to GitHub Packages
-        run: npm publish
+      # 如果打了tag，则发布到 GitHub Packages 和 npm
+      - name: Publish to GitHub Package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn publish --registry=https://npm.pkg.github.com
 
-      # 发布到 npm
-      - name: Publish to npm
+      - name: Publish to npm 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --registry=https://registry.npmjs.org
+        run: yarn publish --registry=https://registry.npmjs.org
