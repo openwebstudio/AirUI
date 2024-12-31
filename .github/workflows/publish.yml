@@ -23,15 +23,11 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      # 配置 GitHub Packages 认证
-      - name: Authenticate with GitHub Packages
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-
-      # 配置 npm 认证
-      - name: Authenticate with npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      # 配置 npm 认证（包括 GitHub 和 npm）
+      - name: Configure npm registry and authenticate
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       # 安装依赖
       - name: Install dependencies
