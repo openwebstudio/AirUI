@@ -3469,9 +3469,10 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-"testing@link:@stencil/core/testing":
-  version "0.0.0"
-  uid ""
+testing@@stencil/core/testing:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/testing/-/testing-3.1.0.tgz#f65b3b08447cf525c0f6df2dce2de93755ff529f"
+  integrity sha512-CJXhYndfyUrznQOGeRb1snX0NYAqt54Rux9hrbcEqCeV9Omrq/vBkFw0J80XEsJ7vWNRI0g564l58UZgEHQFEA==
 
 text-decoder@^1.1.0:
   version "1.2.3"
