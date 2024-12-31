@@ -1,7 +1,7 @@
 {
-  "name": "stencil-component-example",
+  "name": "aird",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "custom components",
   "main": "dist/index.cjs.js",
   "module": "./dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -19,7 +19,8 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "prepare": "yarn run build"
   },
   "license": "MIT",
   "devDependencies": {
@@ -43,5 +44,12 @@
   },
   "dependencies": {
     "postcss": "^8.1.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aircomponents/Components.git"
   }
 }
