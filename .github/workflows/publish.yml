@@ -24,7 +24,6 @@ jobs:
       # 配置 npm 认证（包括 GitHub 和 npm）
       - name: Configure yarn registry and authenticate
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       # 安装依赖
@@ -35,13 +34,7 @@ jobs:
       - name: Build project with yarn
         run: yarn build
 
-      # 如果打了tag，则发布到 GitHub Packages 和 npm
-      - name: Publish to GitHub Package
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn publish --registry=https://npm.pkg.github.com
-
       - name: Publish to npm 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn publish --registry=https://registry.npmjs.org
+        run: yarn publish 
