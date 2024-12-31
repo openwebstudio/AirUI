@@ -1,6 +1,7 @@
 {
   "name": "@aircomponents/components",
   "version": "0.0.2",
+  "private": false,
   "description": "custom components",
   "main": "dist/index.cjs.js",
   "module": "./dist/index.js",
