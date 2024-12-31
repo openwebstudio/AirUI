@@ -39,6 +39,14 @@ jobs:
       - name: Run tests
         run: yarn test
 
+      # 增加小版本号
+      - name: Increment minor version
+        run: |
+          VERSION=$(yarn node -p "require('./package.json').version")
+          echo "Current version: $VERSION"
+            
+          yarn version minor -m "Bump version to %s"
+
       # 发布到 GitHub Packages
       - name: Publish to GitHub Package
         if: startsWith(github.ref, 'refs/tags/')
