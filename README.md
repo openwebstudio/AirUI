@@ -6,6 +6,14 @@
 [![npm downloads](https://img.shields.io/npm/dm/air-components)](https://www.npmjs.com/package/air-components) 
 [![GitHub issues](https://img.shields.io/github/issues/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/issues) 
 [![GitHub stars](https://img.shields.io/github/stars/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/stargazers) 
+[![GitHub forks](https://img.shields.io/github/forks/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/network/members) 
+[![GitHub license](https://img.shields.io/github/license/SisyphusZheng/air-components)](./LICENSE) 
+[![Build Status](https://img.shields.io/github/actions/workflow/status/SisyphusZheng/air-components/main.yml)](https://github.com/SisyphusZheng/air-components/actions) 
+[![Contributors](https://img.shields.io/github/contributors/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/graphs/contributors) 
+[![Code Coverage](https://img.shields.io/codecov/c/github/SisyphusZheng/air-components)](https://codecov.io/gh/SisyphusZheng/air-components) 
+[![Last Commit](https://img.shields.io/github/last-commit/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/commits/main)
+[![Open Issues](https://img.shields.io/github/issues-raw/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/issues)
+[![Dependabot Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)](https://github.com/SisyphusZheng/air-components/network/updates)
 
 **Air-Components** is a lightweight and modern Web Components library designed to offer simple, efficient, and personalized solutions for UI development. The project is currently in its early stages and not yet ready for production use.
 
