@@ -45,7 +45,7 @@ jobs:
           VERSION=$(yarn node -p "require('./package.json').version")
           echo "Current version: $VERSION"
             
-          yarn version minor -m "Bump version to %s"
+          yarn version --patch -m "Bump version to %s"
 
       # 发布到 GitHub Packages
       - name: Publish to GitHub Package
