@@ -1,11 +1,6 @@
 {
-<<<<<<< Updated upstream
-  "name": "@aircomponents/components",
-  "version": "0.0.5",
-=======
   "name": "air-components",
   "version": "0.0.9",
->>>>>>> Stashed changes
   "private": false,
   "description": "custom components",
   "main": "dist/index.cjs.js",
