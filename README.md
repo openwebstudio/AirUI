@@ -2,18 +2,18 @@
 
 ![Air-Components Logo](./src/assets/air-components-board.png)
 
-[![npm version](https://img.shields.io/npm/v/air-components)](https://www.npmjs.com/package/air-components) 
-[![npm downloads](https://img.shields.io/npm/dm/air-components)](https://www.npmjs.com/package/air-components) 
-[![GitHub issues](https://img.shields.io/github/issues/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/issues) 
-[![GitHub stars](https://img.shields.io/github/stars/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/stargazers) 
-[![GitHub forks](https://img.shields.io/github/forks/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/network/members) 
-[![GitHub license](https://img.shields.io/github/license/SisyphusZheng/air-components)](./LICENSE) 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/SisyphusZheng/air-components/main.yml)](https://github.com/SisyphusZheng/air-components/actions) 
-[![Contributors](https://img.shields.io/github/contributors/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/graphs/contributors) 
-[![Code Coverage](https://img.shields.io/codecov/c/github/SisyphusZheng/air-components)](https://codecov.io/gh/SisyphusZheng/air-components) 
-[![Last Commit](https://img.shields.io/github/last-commit/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/commits/main)
-[![Open Issues](https://img.shields.io/github/issues-raw/SisyphusZheng/air-components)](https://github.com/SisyphusZheng/air-components/issues)
-[![Dependabot Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)](https://github.com/SisyphusZheng/air-components/network/updates)
+[![npm version](https://img.shields.io/npm/v/air-components)](https://www.npmjs.com/package/air-components)  
+[![npm downloads](https://img.shields.io/npm/dm/air-components)](https://www.npmjs.com/package/air-components)  
+[![GitHub issues](https://img.shields.io/github/issues/aircomponents/Components)](https://github.com/aircomponents/Components/issues)  
+[![GitHub stars](https://img.shields.io/github/stars/aircomponents/Components)](https://github.com/aircomponents/Components/stargazers)  
+[![GitHub forks](https://img.shields.io/github/forks/aircomponents/Components)](https://github.com/aircomponents/Components/network/members)  
+[![GitHub license](https://img.shields.io/github/license/aircomponents/Components)](https://github.com/aircomponents/Components/blob/main/LICENSE)  
+[![Build Status](https://img.shields.io/github/actions/workflow/status/aircomponents/Components/main.yml)](https://github.com/aircomponents/Components/actions)  
+[![Contributors](https://img.shields.io/github/contributors/aircomponents/Components)](https://github.com/aircomponents/Components/graphs/contributors)  
+[![Code Coverage](https://img.shields.io/codecov/c/github/aircomponents/Components)](https://codecov.io/gh/aircomponents/Components)  
+[![Last Commit](https://img.shields.io/github/last-commit/aircomponents/Components)](https://github.com/aircomponents/Components/commits/main)  
+[![Open Issues](https://img.shields.io/github/issues-raw/aircomponents/Components)](https://github.com/aircomponents/Components/issues)  
+[![Dependabot Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)](https://github.com/aircomponents/Components/network/updates)  
 
 **Air-Components** is a lightweight and modern Web Components library designed to offer simple, efficient, and personalized solutions for UI development. The project is currently in its early stages and not yet ready for production use.
 
