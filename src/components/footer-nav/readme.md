@@ -9,13 +9,13 @@
 
 ### Used by
 
- - [main-app](../main-app)
+ - [air-example](../example)
 
 ### Graph
 ```mermaid
 graph TD;
-  main-app --> footer-nav
-  style footer-nav fill:#f9f,stroke:#333,stroke-width:4px
+  air-example --> air-foot-nav
+  style air-foot-nav fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
