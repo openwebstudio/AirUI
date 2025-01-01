@@ -34,11 +34,11 @@ export namespace Components {
     | "default";
     }
     interface AirCard {
+        "cardTitle": string;
         "description": string;
         "imageUrl": string;
         "showButton": boolean;
         "tags": string[];
-        "title": string;
     }
     interface AirExample {
     }
@@ -164,11 +164,11 @@ declare namespace LocalJSX {
     | "default";
     }
     interface AirCard {
+        "cardTitle"?: string;
         "description"?: string;
         "imageUrl"?: string;
         "showButton"?: boolean;
         "tags"?: string[];
-        "title"?: string;
     }
     interface AirExample {
     }
