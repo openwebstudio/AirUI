@@ -38,12 +38,7 @@ jobs:
       # 运行测试
       - name: Run tests
         run: yarn test
-
-      # 增加小版本号
-      - name: Increment minor version
-        run: |            
-          yarn version --patch --no-git-tag-version
-          echo "Updated package.json version successfully."
+        
       # 发布到 GitHub Packages
       - name: Publish to GitHub Package
         if: startsWith(github.ref, 'refs/tags/')
