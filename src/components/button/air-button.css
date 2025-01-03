@@ -1,58 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* 自定义按钮样式 */
-:host {
-  display: inline-block;
-  --button-color: #3490dc; /* 默认按钮颜色 */
-}
-
+/* 固定宽度样式 */
 .button {
   @apply relative inline-flex items-center justify-center font-medium transition-all duration-200 ease-in-out focus:outline-none;
-  background-color: var(--button-color); /* 使用动态颜色变量 */
+  border-radius: 0.5%;
+  padding: 0.5rem 1rem;
+  width: 200px; /* 固定按钮宽度 */
+  text-align: center;
+  overflow: hidden; /* 超出部分隐藏 */
+  text-overflow: ellipsis; /* 超出宽度显示省略号 */
+  white-space: nowrap; /* 不换行 */
+}
+
+.native-button {
+  border-radius: 0.375rem; /* 默认圆角 */
+  transition: all 0.2s ease-in-out; /* 增加过渡效果 */
+}
+
+/* 如果希望文字换行显示 */
+.button.multiline {
+  white-space: normal; /* 允许换行 */
+  overflow: visible; /* 显示全部内容 */
+  text-overflow: unset; /* 不显示省略号 */
+}
+
+/* variant 样式 */
+.variant-solid {
+  @apply text-white bg-blue-500 border border-blue-500;
+}
+
+.variant-outline {
+  @apply text-blue-500 bg-transparent border border-blue-500;
+}
+
+.variant-text {
+  @apply text-blue-500 bg-transparent border-none;
+}
+
+.variant-neo {
+  @apply text-white bg-gradient-to-r from-blue-500 to-teal-500 border-none;
+}
+
+.variant-default {
+  @apply text-gray-700 bg-gray-100 border border-gray-300;
 }
 
 /* 大小样式 */
 .size-small {
   @apply px-3 py-1.5 text-sm;
+  width: 120px; /* 固定小按钮宽度 */
 }
 
 .size-medium {
   @apply px-4 py-2 text-base;
+  width: 200px; /* 固定中等按钮宽度 */
 }
 
 .size-large {
   @apply px-6 py-3 text-lg;
+  width: 300px; /* 固定大按钮宽度 */
 }
 
-/* Variant 样式分类 */
-.variant-default {
-  @apply text-gray-700 bg-gray-100 border border-gray-300 rounded-lg;
+
+/* color 样式分类 */
+.color-default {
+  @apply text-gray-700 bg-gray-100 border border-gray-300;
 }
 
-.variant-primary {
-  @apply text-white bg-blue-500 border border-blue-500 rounded-lg;
+.color-primary {
+  @apply text-white bg-blue-500 border border-blue-500;
 }
 
-.variant-success {
-  @apply text-white bg-green-500 border border-green-500 rounded-lg;
+.color-success {
+  @apply text-white bg-green-500 border border-green-500;
 }
 
-.variant-info {
-  @apply text-white bg-teal-500 border border-teal-500 rounded-lg;
+.color-info {
+  @apply text-white bg-teal-500 border border-teal-500;
 }
 
-.variant-warning {
-  @apply text-black bg-yellow-400 border border-yellow-500 rounded-lg;
+.color-warning {
+  @apply text-black bg-yellow-400 border border-yellow-500;
 }
 
-.variant-danger {
-  @apply text-white bg-red-500 border border-red-500 rounded-lg;
+.color-danger {
+  @apply text-white bg-red-500 border border-red-500;
 }
 
-.variant-ghost {
-  @apply text-gray-700 bg-transparent border border-gray-300 rounded-lg;
+.color-ghost {
+  @apply text-gray-700 bg-transparent border border-gray-300;
 }
 
 /* 动态样式 */
@@ -93,4 +127,3 @@
 .air-button__suffix-icon {
   @apply inline-block;
 }
-
