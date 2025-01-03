@@ -27,21 +27,22 @@
 Install Air-Components using npm:
 
 ```bash
-npm install air-components
-
-
-## Usage Example
+npm install @aircomponents/ui
 ```
+
+## Usage Example by CDN
+
+``` html
   <title>Test AirComponents</title>
-  <script type="module" src="https://unpkg.com/air-components@0.0.9/dist/aircomponents/aircomponents.esm.js"></script>
+  <script type="module" src="https://unpkg.com/@aircomponents/ui@0.0.1/dist/aircomponents/aircomponents.esm.js"></script>
 </head>
 <body>
   <air-button size="medium" variant="solid" color="primary">Primary Button</air-button>
   <air-button size="medium" variant="outline" color="primary">Outline Primary</air-button>
 </body>
 </html>
-
 ```
+
 ## Development Notes
 
 ### This project is in early development; features and components are actively being built

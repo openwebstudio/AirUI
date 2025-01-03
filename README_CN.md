@@ -28,11 +28,11 @@
 npm install @aircomponents/ui
 ```
 
-## 使用示例
+## 使用示例通过CDN
 
 ```html
   <title>Test AirComponents</title>
-  <script type="module" src="https://unpkg.com/air-components@0.0.9/dist/aircomponents/aircomponents.esm.js"></script>
+  <script type="module" src="https://unpkg.com/@aircomponents/ui@0.0.1/dist/aircomponents/aircomponents.esm.js"></script>
 </head>
 <body>
   <air-button size="medium" variant="solid" color="primary">Primary Button</air-button>
