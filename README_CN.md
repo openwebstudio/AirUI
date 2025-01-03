@@ -2,8 +2,6 @@
 
 ![Air-Components Logo](./src/assets/air-components-board.png)
 
-[中文](https://github.com/SisyphusZheng/Components/blob/main/README_cn.md)
-
 [![npm version](https://img.shields.io/npm/v/air-components)](https://www.npmjs.com/package/air-components) 
 [![npm downloads](https://img.shields.io/npm/dm/air-components)](https://www.npmjs.com/package/air-components) 
 [![GitHub license](https://img.shields.io/github/license/aircomponents/Components)](https://github.com/aircomponents/Components/blob/main/LICENSE) 
@@ -14,25 +12,25 @@
 [![Dependabot Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)](https://github.com/aircomponents/Components/network/updates)
 ---
 
-## Project Highlights
+## 项目亮点
 
-- **Modular Architecture**: Focused on creating reusable and flexible components.
-- **Modern Design Principles**: Emphasizes minimalist UI design with support for multiple themes and visual styles.
-- **Customizable Components**: Easily adapt component styles to meet project-specific requirements using standard CSS.
+- **模块化架构：**: 专注于创建可复用且灵活的组件  
+- **现代设计原则**: 强调极简的用户界面设计，同时支持多种主题和视觉风格。
+- **可定制的组件**: 通过标准 CSS，轻松调整组件样式以满足特定项目需求。
 
 ---
 
-## Installation
+## 安装
 
-Install Air-Components using npm:
+使用 npm 安装 AirComponents：
 
 ```bash
 npm install @aircomponents/ui
 ```
 
-## Usage Example by CDN
+## 使用示例通过CDN
 
-``` html
+```html
   <title>Test AirComponents</title>
   <script type="module" src="https://unpkg.com/@aircomponents/ui@0.0.1/dist/aircomponents/aircomponents.esm.js"></script>
 </head>
@@ -43,8 +41,8 @@ npm install @aircomponents/ui
 </html>
 ```
 
-## Development Notes
+## 开发说明
 
-### This project is in early development; features and components are actively being built
+### 本项目处于早期开发阶段，功能和组件正在积极开发中
 
-### Contributions and feedback are welcome. Visit our GitHub repository for more information
+### 欢迎贡献代码和反馈意见。有关更多信息，请访问我们的 GitHub 仓库
