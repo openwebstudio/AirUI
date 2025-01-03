@@ -2,7 +2,7 @@
 
 ![Air-Components Logo](./src/assets/air-components-board.png)
 
-[中文](https://github.com/SisyphusZheng/Components/blob/main/README_cn.md)
+[中文](https://github.com/SisyphusZheng/Components/blob/main/README_CN.md)
 
 [![npm version](https://img.shields.io/npm/v/air-components)](https://www.npmjs.com/package/air-components) 
 [![npm downloads](https://img.shields.io/npm/dm/air-components)](https://www.npmjs.com/package/air-components) 
