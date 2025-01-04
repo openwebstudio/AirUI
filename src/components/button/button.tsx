@@ -61,11 +61,8 @@ export class AirButton {
           ref={(elm: HTMLButtonElement) => (this.nativeElement = elm)}
           disabled={this.disabled} // 禁用按钮
         >
-          {this.loading ? (
-            <span class="native-button__loading-icon" /> // 加载时显示旋转图标
-          ) : (
-            this.icon && <span class="native-button__icon">{this.icon}</span> // 显示按钮图标
-          )}
+          {this.loading && <span class="native-button__loading-icon" /> }
+          {!this.loading && this.icon && <span class="native-button__icon">{this.icon}</span>}
           <slot onSlotchange={() => this.computeSlotHasContent()} />
           {!this.loading && this.suffixIcon && <span class="native-button__suffix-icon">{this.suffixIcon}</span>}
         </button>
