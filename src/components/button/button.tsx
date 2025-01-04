@@ -12,7 +12,7 @@ export class AirButton {
     | "outline"
     | "text"
     | "neo"
-    | "default" = "solid";
+    | "default"="default";
   @Prop() color:
     | "default"
     | "primary"
@@ -20,7 +20,7 @@ export class AirButton {
     | "info"
     | "warning"
     | "danger"
-    | "ghost" = "default";
+    | "ghost"="default";
   @Prop() icon: string = "";
   @Prop() suffixIcon: string = "";
   @Prop() disabled: boolean = false;
@@ -49,7 +49,7 @@ export class AirButton {
           class={{
             "native-button": true,
             [`size-${this.size}`]: true,
-            [`variant-${this.variant}`]: true,
+            [`variant-${this.variant}`]: !!this.variant,
             [`color-${this.color}`]: true,
             "loading": this.loading, // 加载状态样式
             "disabled": this.disabled, // 禁用状态样式
