@@ -6,7 +6,7 @@ import { Component, h, Prop } from "@stencil/core";
   shadow: true,
 })
 export class AirCard {
-  @Prop() title: string; // 卡片标题
+  @Prop() cardTitle: string; // 卡片标题
   @Prop() description: string; // 卡片描述
   @Prop() imageUrl: string; // 卡片图片 URL
   @Prop() tags: string[] = []; // 标签列表
@@ -26,7 +26,7 @@ export class AirCard {
   
         <div class="px-6 py-4">
           {/* 卡片标题 */}
-          <div class="font-semibold text-2xl text-gray-900 mb-2">{this.title || "Card Title"}</div>
+          <div class="font-semibold text-2xl text-gray-900 mb-2">{this.cardTitle || "Card Title"}</div>
   
           {/* 卡片描述 */}
           <p class="text-gray-600 text-base mb-4">{this.description || "This is a description of the card content."}</p>
