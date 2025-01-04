@@ -29,9 +29,14 @@ export namespace Components {
         "variant": | "solid"
     | "outline"
     | "text"
-    | "outline"
     | "neo"
     | "default";
+    }
+    interface AirButtonGroup {
+        "customStyles": { [key: string]: string };
+        "direction": "horizontal" | "vertical";
+        "group": string;
+        "spacing": string;
     }
     interface AirCard {
         "cardTitle": string;
@@ -81,6 +86,12 @@ declare global {
         prototype: HTMLAirButtonElement;
         new (): HTMLAirButtonElement;
     };
+    interface HTMLAirButtonGroupElement extends Components.AirButtonGroup, HTMLStencilElement {
+    }
+    var HTMLAirButtonGroupElement: {
+        prototype: HTMLAirButtonGroupElement;
+        new (): HTMLAirButtonGroupElement;
+    };
     interface HTMLAirCardElement extends Components.AirCard, HTMLStencilElement {
     }
     var HTMLAirCardElement: {
@@ -126,6 +137,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "air-avatar": HTMLAirAvatarElement;
         "air-button": HTMLAirButtonElement;
+        "air-button-group": HTMLAirButtonGroupElement;
         "air-card": HTMLAirCardElement;
         "air-example": HTMLAirExampleElement;
         "air-foot-nav": HTMLAirFootNavElement;
@@ -159,9 +171,14 @@ declare namespace LocalJSX {
         "variant"?: | "solid"
     | "outline"
     | "text"
-    | "outline"
     | "neo"
     | "default";
+    }
+    interface AirButtonGroup {
+        "customStyles"?: { [key: string]: string };
+        "direction"?: "horizontal" | "vertical";
+        "group"?: string;
+        "spacing"?: string;
     }
     interface AirCard {
         "cardTitle"?: string;
@@ -199,6 +216,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "air-avatar": AirAvatar;
         "air-button": AirButton;
+        "air-button-group": AirButtonGroup;
         "air-card": AirCard;
         "air-example": AirExample;
         "air-foot-nav": AirFootNav;
@@ -214,6 +232,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "air-avatar": LocalJSX.AirAvatar & JSXBase.HTMLAttributes<HTMLAirAvatarElement>;
             "air-button": LocalJSX.AirButton & JSXBase.HTMLAttributes<HTMLAirButtonElement>;
+            "air-button-group": LocalJSX.AirButtonGroup & JSXBase.HTMLAttributes<HTMLAirButtonGroupElement>;
             "air-card": LocalJSX.AirCard & JSXBase.HTMLAttributes<HTMLAirCardElement>;
             "air-example": LocalJSX.AirExample & JSXBase.HTMLAttributes<HTMLAirExampleElement>;
             "air-foot-nav": LocalJSX.AirFootNav & JSXBase.HTMLAttributes<HTMLAirFootNavElement>;

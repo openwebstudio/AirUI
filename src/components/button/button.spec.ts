@@ -1,5 +1,5 @@
 import { newSpecPage } from "@stencil/core/testing";
-import { AirButton } from "./air-button";
+import { AirButton } from "./button";
 
 describe("air-button", () => {
   it("renders default air-button", async () => {

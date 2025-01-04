@@ -1,0 +1,120 @@
+/* 核心按钮样式 */
+.native-button {
+  @apply relative inline-flex items-center justify-center font-medium transition-all duration-200 ease-in-out focus:outline-none;
+  @apply px-4 py-2 text-center overflow-hidden gap-2;
+  min-height: 2.5rem; /* 最小高度 */
+  min-width: 6rem; /* 最小宽度 */
+  border-radius: 0.375rem; /* 默认圆角 */
+}
+
+/* 按钮状态样式 */
+.native-button:hover:not(:disabled) {
+  @apply transform scale-105; /* 悬停时放大 */
+}
+
+.native-button:disabled {
+  @apply bg-gray-300 text-gray-500 cursor-not-allowed; /* 禁用状态 */
+}
+
+.native-button:active:not(:disabled) {
+  @apply scale-95; /* 按下时缩小 */
+}
+
+/* 加载状态 */
+.native-button.loading {
+  @apply cursor-wait pointer-events-none; /* 显示加载时禁用点击 */
+}
+
+.native-button.selected {
+  @apply border-black; /* 选中时加边框 */
+}
+
+/* 按钮尺寸 */
+.native-button.size-small {
+  @apply px-3 py-1.5 text-sm;
+  width: 120px; /* 固定小尺寸宽度 */
+}
+
+.native-button.size-medium {
+  @apply px-4 py-2 text-base;
+  width: 200px; /* 固定中等尺寸宽度 */
+}
+
+.native-button.size-large {
+  @apply px-6 py-3 text-lg;
+  width: 300px; /* 固定大尺寸宽度 */
+}
+
+/* 按钮颜色 */
+.native-button.color-default {
+  @apply text-gray-700 bg-gray-100 border-gray-300;
+}
+
+.native-button.color-primary {
+  @apply text-white bg-blue-500 border-blue-500;
+}
+
+.native-button.color-success {
+  @apply text-white bg-green-500 border-green-500;
+}
+
+.native-button.color-info {
+  @apply text-white bg-teal-500 border-teal-500;
+}
+
+.native-button.color-warning {
+  @apply text-black bg-yellow-500 border-yellow-500;
+}
+
+.native-button.color-danger {
+  @apply text-white bg-red-600 border-red-500;
+}
+
+.native-button.color-ghost {
+  @apply text-gray-700 bg-transparent border-gray-500;
+}
+
+/* 按钮变体 */
+.native-button.variant-solid {
+  @apply border;
+}
+
+.native-button.variant-outline {
+  @apply border border-gray-500;
+}
+
+.native-button.variant-text {
+  @apply bg-transparent border-none;
+}
+
+.native-button.variant-neo {
+  @apply bg-gradient-to-r from-blue-500 to-teal-500;
+}
+
+.native-button.variant-default {
+  @apply border;
+}
+
+/* 图标和文本样式 */
+.native-button.native-button__icon,
+.native-button.native-button__suffix-icon {
+  @apply flex-shrink-0; /* 防止图标缩放 */
+}
+
+/* 图标适配 */
+.native-button__icon,
+.native-button__loading-icon,
+.native-button__suffix-icon {
+  @apply inline-block; /* 图标与文本对齐 */
+}
+
+.native-button.native-button__text {
+  @apply flex-1 text-center min-w-0; /* 文本区域自适应压缩 */
+}
+
+/* 加载状态的图标 */
+.native-button__loading-icon {
+  @apply w-6 h-6 border-4 border-t-transparent border-solid rounded-full animate-spin; /* 加载圆环 */
+  border-color: currentColor transparent transparent transparent;
+  animation-duration: 1s; /* 动画时长 */
+}
