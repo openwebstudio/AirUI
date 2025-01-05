@@ -6,93 +6,65 @@
   <title>Test AirComponents</title>
   <!-- 引入 aircomponents 包的 CSS（如果有） -->
 </head>
-<script type="module" src='https://unpkg.com/@aircomponents/ui@0.0.9/dist/aircomponents/aircomponents.esm.js'>
+<script type="module" src='https://unpkg.com/@aircomponents/ui@0.0.5/dist/aircomponents/aircomponents.esm.js'>
     
 </script>
   
 <body>
-    <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <!-- 默认按钮 -->
-        {/* 默认按钮 */}
-        <air-button size="medium" variant="solid" color="primary">
-          Primary Button
-        </air-button>
-        <air-button size="medium" variant="outline" color="primary">
-          Outline Primary
-        </air-button>
-        <air-button size="medium" variant="text" color="primary">
-          Text Primary
-        </air-button>
-  
-        {/* 其他颜色 */}
-        <air-button size="medium" variant="solid" color="success">
-          Success Button
-        </air-button>
-        <air-button size="medium" variant="solid" color="info">
-          Info Button
-        </air-button>
-        <air-button size="medium" variant="solid" color="warning">
-          Warning Button
-        </air-button>
-        <air-button size="medium" variant="solid" color="danger">
-          Danger Button
-        </air-button>
-        <air-button size="medium" variant="solid" color="ghost">
-          Ghost Button
-        </air-button>
-  
-        {/* 大小按钮 */}
-        <air-button size="small" variant="solid" color="primary">
-          Small Button
-        </air-button>
-        <air-button size="large" variant="solid" color="primary">
-          Large Button
-        </air-button>
-  
-        {/* 带图标的按钮 */}
-        <air-button size="medium" variant="solid" color="primary" icon="🔍">
-          Search Button
-        </air-button>
-        <air-button
-          size="medium"
-          variant="solid"
-          color="primary"
-          suffixIcon="📥"
-        >
-          Download Button
-        </air-button>
-  
-        {/* 带加载状态的按钮 */}
-        <air-button
-          size="medium"
-          variant="solid"
-          color="primary"
-          loading={true}
-        >
-          Loading Button
-        </air-button>
-  
-        {/* 带禁用状态的按钮 */}
-        <air-button
-          size="medium"
-          variant="solid"
-          color="primary"
-          disabled={true}
-        >
-          Disabled Button
-        </air-button>
-  
-        {/* 带选中状态的按钮 */}
-        <air-button
-          size="medium"
-          variant="solid"
-          color="primary"
-          selected={true}
-        >
-          Selected Button
-        </air-button>
-        
-      
-      
+    <!-- 按钮颜色展示 -->
+<air-button color="primary">主按钮</air-button>
+<air-button color="success">成功按钮</air-button>
+<air-button color="info">信息按钮</air-button>
+<air-button color="warning">警告按钮</air-button>
+<air-button color="danger">危险按钮</air-button>
+<air-button color="ghost">幽灵按钮</air-button>
+
+<!-- 按钮样式展示 -->
+<air-button variant="solid">实心按钮</air-button>
+<air-button variant="outline">描边按钮</air-button>
+<air-button variant="text">文字按钮</air-button>
+<air-button variant="neo">霓虹按钮</air-button>
+<air-button variant="default">默认按钮</air-button>
+
+<!-- 图标按钮展示 -->
+<air-button icon="⭐">图标按钮</air-button>
+<air-button suffix-icon="✓">后缀图标按钮</air-button>
+<air-button icon="🔄" suffix-icon="✓">双图标按钮</air-button>
+
+<!-- 加载中、禁用、选中状态展示 -->
+<air-button loading>加载中</air-button>
+<air-button disabled>禁用按钮</air-button>
+<air-button disabled icon="❌">禁用图标按钮</air-button>
+<air-button selected>选中按钮</air-button>
+<air-button selected icon="✔️">选中图标按钮</air-button>
+
+<!-- 不同大小按钮展示 -->
+<air-button size="small">小按钮</air-button>
+<air-button size="medium">中按钮</air-button>
+<air-button size="large">大按钮</air-button>
+
+<!-- 按钮组展示 -->
+<air-button-group direction="horizontal" spacing="10px">
+  <air-button color="primary">按钮 1</air-button>
+  <air-button color="success">按钮 2</air-button>
+  <air-button color="danger">按钮 3</air-button>
+</air-button-group>
+
+<air-button-group direction="vertical" spacing="8px">
+  <air-button color="primary">垂直按钮 1</air-button>
+  <air-button color="success">垂直按钮 2</air-button>
+</air-button-group>
+
+<!-- 按钮组件 -->
+<air-button color="primary" variant="outline" id="myButton">按钮</air-button>
 </body>
+<script>
+  // 监听按钮的点击事件
+  const button = document.querySelector('#myButton');
+  button.addEventListener('buttonClick', (event) => {
+    const { selected } = event.detail;
+    console.log('按钮被点击');
+    alert(`按钮被点击`);
+  });
+</script>
 </html>
