@@ -1,0 +1,11 @@
+.air-button-group > .button {
+    margin: var(--spacing, 5px);
+}
+
+@media (max-width: 640px) {
+    .btn-group:not([data-direction="horizontal"]) {
+      flex-direction: column;
+    }
+  }
+  
+
