@@ -22,6 +22,7 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      dir: 'dist',
     },
     {
       type: 'docs-readme',

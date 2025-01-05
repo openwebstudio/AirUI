@@ -1,29 +1,28 @@
 {
   "name": "@aircomponents/ui",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "private": false,
   "license": "MIT",
   "description": "custom components",
   "main": "dist/index.cjs.js",
-  "module": "dist/aircomponents/aircomponents.esm.js",
-  "es2015": "dist/esm/index.mjs",
-  "es2017": "dist/esm/index.mjs",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.js",
+  "es2017": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/aircomponents/aircomponents.esm.js",
   "files": [
     "dist/",
-    "loader/",
-    "README.md",
-    "LICENSE"
+    "loader/"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/aircomponents/aircomponents.esm.js",
-      "require": "./dist/aircomponents/aircomponents.cjs.js"
-    }
-  },
+  "keywords": [
+    "stencil",
+    "web-components",
+    "components"
+  ],
+  "author": "SisyphusZheng",
+  "homepage": "https://github.com/SisyphusZheng/Components#readme",
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
@@ -52,10 +51,11 @@
     "typescript": "^5.7.2"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SisyphusZheng/Components.git"
+    "url": "git+https://github.com/aircomponents/Components.git"
   }
 }
