@@ -29,9 +29,14 @@ export namespace Components {
         "variant": | "solid"
     | "outline"
     | "text"
-    | "outline"
     | "neo"
     | "default";
+    }
+    interface AirButtonGroup {
+        "customStyles": { [key: string]: string };
+        "direction": "horizontal" | "vertical";
+        "group": string;
+        "spacing": string;
     }
     interface AirCard {
         "cardTitle": string;
@@ -68,6 +73,10 @@ export namespace Components {
         "titleTextColor": string;
     }
 }
+export interface AirButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAirButtonElement;
+}
 declare global {
     interface HTMLAirAvatarElement extends Components.AirAvatar, HTMLStencilElement {
     }
@@ -75,11 +84,28 @@ declare global {
         prototype: HTMLAirAvatarElement;
         new (): HTMLAirAvatarElement;
     };
+    interface HTMLAirButtonElementEventMap {
+        "buttonClick": { event: MouseEvent; selected: boolean };
+    }
     interface HTMLAirButtonElement extends Components.AirButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAirButtonElementEventMap>(type: K, listener: (this: HTMLAirButtonElement, ev: AirButtonCustomEvent<HTMLAirButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAirButtonElementEventMap>(type: K, listener: (this: HTMLAirButtonElement, ev: AirButtonCustomEvent<HTMLAirButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAirButtonElement: {
         prototype: HTMLAirButtonElement;
         new (): HTMLAirButtonElement;
+    };
+    interface HTMLAirButtonGroupElement extends Components.AirButtonGroup, HTMLStencilElement {
+    }
+    var HTMLAirButtonGroupElement: {
+        prototype: HTMLAirButtonGroupElement;
+        new (): HTMLAirButtonGroupElement;
     };
     interface HTMLAirCardElement extends Components.AirCard, HTMLStencilElement {
     }
@@ -126,6 +152,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "air-avatar": HTMLAirAvatarElement;
         "air-button": HTMLAirButtonElement;
+        "air-button-group": HTMLAirButtonGroupElement;
         "air-card": HTMLAirCardElement;
         "air-example": HTMLAirExampleElement;
         "air-foot-nav": HTMLAirFootNavElement;
@@ -153,15 +180,21 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "icon"?: string;
         "loading"?: boolean;
+        "onButtonClick"?: (event: AirButtonCustomEvent<{ event: MouseEvent; selected: boolean }>) => void;
         "selected"?: boolean;
         "size"?: "small" | "medium" | "large";
         "suffixIcon"?: string;
         "variant"?: | "solid"
     | "outline"
     | "text"
-    | "outline"
     | "neo"
     | "default";
+    }
+    interface AirButtonGroup {
+        "customStyles"?: { [key: string]: string };
+        "direction"?: "horizontal" | "vertical";
+        "group"?: string;
+        "spacing"?: string;
     }
     interface AirCard {
         "cardTitle"?: string;
@@ -199,6 +232,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "air-avatar": AirAvatar;
         "air-button": AirButton;
+        "air-button-group": AirButtonGroup;
         "air-card": AirCard;
         "air-example": AirExample;
         "air-foot-nav": AirFootNav;
@@ -214,6 +248,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "air-avatar": LocalJSX.AirAvatar & JSXBase.HTMLAttributes<HTMLAirAvatarElement>;
             "air-button": LocalJSX.AirButton & JSXBase.HTMLAttributes<HTMLAirButtonElement>;
+            "air-button-group": LocalJSX.AirButtonGroup & JSXBase.HTMLAttributes<HTMLAirButtonGroupElement>;
             "air-card": LocalJSX.AirCard & JSXBase.HTMLAttributes<HTMLAirCardElement>;
             "air-example": LocalJSX.AirExample & JSXBase.HTMLAttributes<HTMLAirExampleElement>;
             "air-foot-nav": LocalJSX.AirFootNav & JSXBase.HTMLAttributes<HTMLAirFootNavElement>;

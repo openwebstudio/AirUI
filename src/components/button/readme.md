@@ -16,7 +16,14 @@
 | `selected`   | `selected`    |             | `boolean`                                                                           | `false`     |
 | `size`       | `size`        |             | `"large" \| "medium" \| "small"`                                                    | `"medium"`  |
 | `suffixIcon` | `suffix-icon` |             | `string`                                                                            | `""`        |
-| `variant`    | `variant`     |             | `"default" \| "neo" \| "outline" \| "solid" \| "text"`                              | `"solid"`   |
+| `variant`    | `variant`     |             | `"default" \| "neo" \| "outline" \| "solid" \| "text"`                              | `"default"` |
+
+
+## Events
+
+| Event         | Description | Type                                                     |
+| ------------- | ----------- | -------------------------------------------------------- |
+| `buttonClick` |             | `CustomEvent<{ event: MouseEvent; selected: boolean; }>` |
 
 
 ----------------------------------------------
