@@ -3,7 +3,7 @@
 exports[`air-button renders default air-button 1`] = `
 <air-button>
   <template shadowrootmode="open">
-    <button aria-label="Button" class="color-default native-button size-medium variant-solid" title="Button">
+    <button aria-label="Button" class="color-default native-button size-medium variant-default" title="Button">
       <slot></slot>
     </button>
   </template>
