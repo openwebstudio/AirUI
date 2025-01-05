@@ -19,6 +19,13 @@
 | `variant`    | `variant`     |             | `"default" \| "neo" \| "outline" \| "solid" \| "text"`                              | `"default"` |
 
 
+## Events
+
+| Event         | Description | Type                                                     |
+| ------------- | ----------- | -------------------------------------------------------- |
+| `buttonClick` |             | `CustomEvent<{ event: MouseEvent; selected: boolean; }>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

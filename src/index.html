@@ -70,5 +70,17 @@
   <air-button color="success">垂直按钮 2</air-button>
 </air-button-group>
 
+<!-- 按钮组件 -->
+<air-button color="primary" variant="outline" id="myButton">按钮</air-button>
+
+<script>
+  // 监听按钮的点击事件
+  const button = document.querySelector('#myButton');
+  button.addEventListener('buttonClick', (event) => {
+    const { selected } = event.detail;
+    console.log('按钮被点击');
+    alert(`按钮被点击`);
+  });
+</script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, State } from "@stencil/core";
+import { Component, h, Host, Prop, State,Event,EventEmitter} from "@stencil/core";
 
 @Component({
   tag: "air-button",
@@ -29,8 +29,9 @@ export class AirButton {
 
   @State() hasSlotContent: boolean = false; // 插槽内容检测
 
-  private nativeElement!: HTMLButtonElement;
+  @Event() buttonClick: EventEmitter<{ event: MouseEvent; selected: boolean }>; // 定义事件
 
+  private nativeElement!: HTMLButtonElement;
   // 检查按钮插槽内容
   private computeSlotHasContent() {
     const slot = this.nativeElement.shadowRoot?.querySelector("slot");
@@ -39,6 +40,15 @@ export class AirButton {
       this.hasSlotContent = assignedNodes.length > 0 || slot.textContent?.trim().length > 0;
     }
   }
+  private handleClick = (event: MouseEvent) => {
+    if (this.disabled || this.loading) {
+      event.preventDefault();
+      return;
+    }
+
+    // 触发外部注入的逻辑
+    this.buttonClick.emit({ event, selected: this.selected });
+  };
 
   render() {
     const ariaLabel = this.hasSlotContent ? null : "Button"; // 适配无内容时的 aria-label
@@ -60,6 +70,7 @@ export class AirButton {
           title={ariaLabel}
           ref={(elm: HTMLButtonElement) => (this.nativeElement = elm)}
           disabled={this.disabled} // 禁用按钮
+          onClick={this.handleClick}
         >
           {this.loading && <span class="native-button__loading-icon" /> }
           {!this.loading && this.icon && <span class="native-button__icon">{this.icon}</span>}

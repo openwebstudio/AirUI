@@ -73,6 +73,10 @@ export namespace Components {
         "titleTextColor": string;
     }
 }
+export interface AirButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAirButtonElement;
+}
 declare global {
     interface HTMLAirAvatarElement extends Components.AirAvatar, HTMLStencilElement {
     }
@@ -80,7 +84,18 @@ declare global {
         prototype: HTMLAirAvatarElement;
         new (): HTMLAirAvatarElement;
     };
+    interface HTMLAirButtonElementEventMap {
+        "buttonClick": { event: MouseEvent; selected: boolean };
+    }
     interface HTMLAirButtonElement extends Components.AirButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAirButtonElementEventMap>(type: K, listener: (this: HTMLAirButtonElement, ev: AirButtonCustomEvent<HTMLAirButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAirButtonElementEventMap>(type: K, listener: (this: HTMLAirButtonElement, ev: AirButtonCustomEvent<HTMLAirButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAirButtonElement: {
         prototype: HTMLAirButtonElement;
@@ -165,6 +180,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "icon"?: string;
         "loading"?: boolean;
+        "onButtonClick"?: (event: AirButtonCustomEvent<{ event: MouseEvent; selected: boolean }>) => void;
         "selected"?: boolean;
         "size"?: "small" | "medium" | "large";
         "suffixIcon"?: string;
