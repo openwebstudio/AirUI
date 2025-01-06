@@ -2,8 +2,6 @@
 
 ![Air-Components Logo](./src/assets/air-components-board.png)
 
-[中文](https://github.com/SisyphusZheng/Components/blob/main/README_CN.md)
-
 [![npm version](https://img.shields.io/npm/v/air-components)](https://www.npmjs.com/package/air-components) 
 [![npm downloads](https://img.shields.io/npm/dm/air-components)](https://www.npmjs.com/package/air-components) 
 [![GitHub license](https://img.shields.io/github/license/aircomponents/Components)](https://github.com/aircomponents/Components/blob/main/LICENSE) 
@@ -14,19 +12,18 @@
 [![Dependabot Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)](https://github.com/aircomponents/Components/network/updates)
 ---
 
-## Project Highlights
+## 项目亮点
 
-- **Modular Architecture**: Focused on creating reusable and flexible components like `air-button`, `air-card`, and `air-header`.
-- **Modern Design Principles**: Emphasizes minimalist UI design with support for multiple themes and visual styles.
-- **Customizable Components**: Easily adapt component styles to meet project-specific requirements using standard CSS.
-
+- **模块化架构：**: 专注于创建可复用且灵活的组件  
+- **现代设计原则**: 强调极简的用户界面设计，同时支持多种主题和视觉风格。
+- **可定制的组件**: 通过标准 CSS，轻松调整组件样式以满足特定项目需求。
 ---
 
-## Installation
-
-Install Air-Components using npm:
+## 安装
 
 ### NPM
+
+使用 npm 安装 AirComponents：
 
 ```bash
 npm install @aircomponents/ui
@@ -75,7 +72,7 @@ export default App;
 
 ### Vue
 
-#### Vue Config
+#### Vue 设置
 
 ```js
 module.exports = {
@@ -94,7 +91,7 @@ module.exports = {
 };
 ```
 
-#### USE Vue
+#### Vue
 
 ```js
 <template>
