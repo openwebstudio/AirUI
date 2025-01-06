@@ -22,7 +22,6 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
-      dir: 'dist',
     },
     {
       type: 'docs-readme',
@@ -30,7 +29,6 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
-      dir: 'docs'  
     },
   ],
   plugins: [
