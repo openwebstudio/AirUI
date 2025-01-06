@@ -3,13 +3,8 @@
 ![Air-Components Logo](./src/assets/air-components-board.png)
 
 [![npm version](https://img.shields.io/npm/v/air-components)](https://www.npmjs.com/package/air-components) 
-[![npm downloads](https://img.shields.io/npm/dm/air-components)](https://www.npmjs.com/package/air-components) 
-[![GitHub license](https://img.shields.io/github/license/aircomponents/Components)](https://github.com/aircomponents/Components/blob/main/LICENSE) 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/aircomponents/Components/.github/workflows/publish.yml)](https://github.com/aircomponents/Components/actions) 
-[![Contributors](https://img.shields.io/github/contributors/aircomponents/Components)](https://github.com/aircomponents/Components/graphs/contributors) 
-[![Code Coverage](https://img.shields.io/codecov/c/github/aircomponents/Components)](https://codecov.io/gh/aircomponents/Components) 
-[![Last Commit](https://img.shields.io/github/last-commit/aircomponents/Components)](https://github.com/aircomponents/Components/commits/main) 
-[![Dependabot Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)](https://github.com/aircomponents/Components/network/updates)
+[![npm downloads](https://img.shields.io/npm/dm/air-components)](https://www.npmjs.com/package/air-components) [![GitHub license](https://img.shields.io/github/license/aircomponents/Components)](https://github.com/aircomponents/Components/blob/main/LICENSE)  [![Last Commit](https://img.shields.io/github/last-commit/aircomponents/Components)](https://github.com/aircomponents/Components/commits/main) [![Dependabot Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)](https://github.com/aircomponents/Components/network/updates)
+
 ---
 
 ## 项目亮点
