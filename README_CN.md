@@ -2,7 +2,6 @@
 
 ![Air-Components Logo](./src/assets/air-components-board.png)
 
-[![npm version](https://img.shields.io/npm/v/air-components)](https://www.npmjs.com/package/air-components) 
 [![npm downloads](https://img.shields.io/npm/dm/air-components)](https://www.npmjs.com/package/air-components) 
 [![GitHub license](https://img.shields.io/github/license/aircomponents/Components)](https://github.com/aircomponents/Components/blob/main/LICENSE) 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/aircomponents/Components/.github/workflows/publish.yml)](https://github.com/aircomponents/Components/actions) 
