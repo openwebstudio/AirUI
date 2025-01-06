@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test AirComponents</title>
-  <!-- 引入 aircomponents 包的 CSS（如果有） -->
-</head>
-<script type="module" src='https://unpkg.com/@aircomponents/ui@0.0.5/dist/aircomponents/aircomponents.esm.js'>
-    
-</script>
-  
-<body>
-    <!-- 按钮颜色展示 -->
+<!-- 按钮颜色展示 -->
 <air-button color="primary">主按钮</air-button>
 <air-button color="success">成功按钮</air-button>
 <air-button color="info">信息按钮</air-button>
@@ -42,29 +29,3 @@
 <air-button size="small">小按钮</air-button>
 <air-button size="medium">中按钮</air-button>
 <air-button size="large">大按钮</air-button>
-
-<!-- 按钮组展示 -->
-<air-button-group direction="horizontal" spacing="10px">
-  <air-button color="primary">按钮 1</air-button>
-  <air-button color="success">按钮 2</air-button>
-  <air-button color="danger">按钮 3</air-button>
-</air-button-group>
-
-<air-button-group direction="vertical" spacing="8px">
-  <air-button color="primary">垂直按钮 1</air-button>
-  <air-button color="success">垂直按钮 2</air-button>
-</air-button-group>
-
-<!-- 按钮组件 -->
-<air-button color="primary" variant="outline" id="myButton">按钮</air-button>
-</body>
-<script>
-  // 监听按钮的点击事件
-  const button = document.querySelector('#myButton');
-  button.addEventListener('buttonClick', (event) => {
-    const { selected } = event.detail;
-    console.log('按钮被点击');
-    alert(`按钮被点击`);
-  });
-</script>
-</html>
