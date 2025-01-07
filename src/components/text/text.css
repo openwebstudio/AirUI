@@ -1,0 +1,94 @@
+/* General Text Styles */
+
+/* Heading Text Styles */
+.heading-1 {
+    @apply text-4xl font-bold;
+  }
+  
+  .heading-2 {
+    @apply text-3xl font-bold;
+  }
+  
+  .heading-3 {
+    @apply text-2xl font-semibold;
+  }
+  
+  .heading-4 {
+    @apply text-xl font-medium;
+  }
+  
+  .heading-5 {
+    @apply text-lg font-medium;
+  }
+  
+  .heading-6 {
+    @apply text-lg font-medium;
+  }
+  
+  /* Body Text Styles */
+  .body-text {
+    @apply text-lg sm:text-xl leading-relaxed mb-4;
+  }
+  
+  .body-compact {
+    @apply text-sm sm:text-base leading-snug mb-2;
+  }
+  
+  .body-large {
+    @apply text-xl sm:text-2xl leading-relaxed mb-6;
+  }
+  
+  .body-emphasis {
+    @apply text-lg sm:text-xl font-semibold text-primary;
+  }
+  
+  /* Code Text Styles */
+  .code-text {
+    @apply text-sm font-mono bg-gray-100 p-1 rounded;
+  }
+  
+  /* Label Text Styles */
+  .label-text {
+    @apply text-sm font-medium;
+  }
+  
+  /* Helper Text Styles */
+  .helper-text {
+    @apply text-xs text-gray-500;
+  }
+  
+  /* Legal Text Styles */
+  .legal-text {
+    @apply text-xs text-gray-400;
+  }
+  
+  /* Fluid Heading Styles */
+  .fluid-heading {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold;
+  }
+  
+  /* Color Styles */
+  .text-primary {
+    @apply text-black;
+  }
+  
+  .text-secondary {
+    @apply text-green-500;
+  }
+  
+  .text-tertiary {
+    @apply text-yellow-500;
+  }
+  
+  .text-error {
+    @apply text-red-500;
+  }
+  
+  .text-inverse {
+    @apply text-white;
+  }
+  
+  /* Inline Text */
+  .expressive {
+    @apply font-bold italic text-red-500;
+  }
