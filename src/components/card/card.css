@@ -1,0 +1,83 @@
+/* card.css */
+
+/* 基本卡片样式 */
+.card {
+    @apply max-w-sm rounded-lg shadow-lg overflow-hidden bg-white transition-all duration-300 ease-in-out;
+    border: 2px solid transparent; /* 默认透明边框，避免闪烁 */
+    border-radius: 12px; /* 使边角圆润 */
+  }
+  
+  /* 当卡片被悬停时，边框变粗并变成蓝色 */
+  .card:hover {
+    @apply transform scale-105;
+    border: 2px solid #3b82f6; /* 悬停时显示蓝色边框 */
+  }
+  
+  /* 高亮卡片时，使用较厚的边框，并将边框颜色变为绿色 */
+  .card.highlighted {
+    @apply border-4 border-green-500; /* 高亮时，使用较粗的绿色边框 */
+  }
+  
+  .card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease-out;
+  }
+
+  /* 卡片图像 */
+  .card-image {
+    @apply w-full h-48 object-cover rounded-t-lg; /* 上圆角 */
+  }
+  
+  /* 卡片主体内容 */
+  .card-body {
+    @apply p-4;
+  }
+  
+  /* 卡片标题 */
+  .card-title {
+    @apply text-xl font-semibold text-gray-800;
+  }
+  
+  /* 卡片内容 */
+  .card-content {
+    @apply text-gray-600 text-base;
+  }
+  
+  /* 卡片底部 */
+  .card-footer {
+    @apply text-gray-600 text-center;
+  }
+  
+  /* 插槽内容 */
+  slot[name="title"]::slotted(*) {
+    @apply text-lg font-bold text-gray-900;
+  }
+  
+  slot[name="content"]::slotted(*) {
+    @apply text-base text-gray-700;
+  }
+
+  /* 加载状态占位符 */
+  .card .loading-placeholder {
+    @apply w-full h-48 bg-gray-200 animate-pulse;
+  }
+  
+  /* 卡片背景色 */
+  .card-background {
+    @apply bg-gray-50;
+  }
+  
+  .card.small {
+    width: 200px;
+    padding: 0.75rem;
+  }
+  
+  .card.medium {
+    width: 300px;
+    padding: 1rem;
+  }
+  
+  .card.large {
+    width: 400px;
+    padding: 1.25rem;
+  }
