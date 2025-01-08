@@ -2,103 +2,57 @@
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      href="../src/assets/air-components-logo.svg"
-      type="image/x-icon"
-    />
+      rel="stylesheet" />
+    <link rel="icon" href="../src/assets/air-components-logo.svg" type="image/x-icon" />
     <title>AirComponents-Starter</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/tailwindcss@3.0.7/lib/css/preflight.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@3.0.7/lib/css/preflight.css" />
     <script type="module" src="./build/aircomponents.esm.js"></script>
     <script nomodule src="./build/aircomponents.js"></script>
   </head>
   <body>
+    {/* 普通文本输入框 */}
+    <air-input label="用户名" name="username" placeholder="请输入用户名"></air-input>
 
-    <air-card imageUrl="https://via.placeholder.com/150" isHighlighted="true">
-      <!-- 自定义标题 -->
-      <span slot="title">Custom Card Title</span>
-      
-      <!-- 自定义内容 -->
-      <span slot="content">This is custom content for the card. You can replace it with any custom HTML.</span>
-      
-      <!-- 自定义底部 -->
-      <div slot="footer">
-        <air-button
-        slot="footer"
-          id="myButton"
-          size="small"
-          variant="solid"
-          color="primary"
-          loading="false"
-          disabled="false"
-        >
-          Click Me
-        </air-button>
-      </div>
-    </air-card>
-    
-    <air-card isHighlighted="false">
-      <!-- 使用默认的插槽内容 -->
-      <span slot="title">Another Card Title</span>
-      <span slot="content">Here is another custom content for a different card.</span>
-      
-      <!-- 无底部插槽，使用默认内容 -->
-    </air-card>
-    
-    <air-card isHighlighted="true">
-      <span slot="title">
-        <air-text type="heading" level="1" color="primary">Card Title</air-text>
-      </span>
-      <span slot="content">
-        <air-text type="body" color="secondary">This is a description of the card content. It can be anything, such as a brief introduction or message.</air-text>
-      </span>
-      <div slot="footer">
-        <air-button size="small" variant="solid" color="primary">Learn More</air-button>
-      </div>
-    </air-card>
-    
-    <air-card isHighlighted="false" imageUrl="https://via.placeholder.com/150">
-      <span slot="title">
-        <air-text type="heading" level="2" color="primary">Featured Card</air-text>
-      </span>
-      <span slot="content">
-        <air-text type="body" color="tertiary">This card includes an image and some descriptive content. Click on it for more information.</air-text>
-      </span>
-      <div slot="footer">
-        <air-button size="medium" variant="outline" color="primary">Learn More</air-button>
-      </div>
-    </air-card>
-    
-    <air-card isHighlighted="false" size="large">
-      <span slot="content">
-        <air-text type="fluid-heading" color="primary">Responsive Card Title</air-text>
-      </span>
-    </air-card>
-    
-    <air-card isHighlighted="false" size="small">
-      <span slot="title">
-        <air-text type="heading" level="3" color="primary">Terms and Conditions</air-text>
-      </span>
-      <span slot="content">
-        <air-text type="legal" color="tertiary">Please read these terms and conditions carefully before using our service.</air-text>
-      </span>
-      <div slot="footer">
-        <air-button size="small" variant="outline" color="secondary">I Agree</air-button>
-      </div>
-    </air-card>
-    
+    {/* 密码输入框 */}
+    <air-input
+      label="密码"
+      name="password"
+      type="password"
+      placeholder="请输入密码"
+      error="{true}"
+      errorMessage="密码格式不正确"></air-input>
+
+    {/* 邮箱输入框 */}
+    <air-input
+      label="邮箱"
+      name="email"
+      type="email"
+      placeholder="请输入邮箱"
+      required="{true}"
+      error="{false}"></air-input>
+
+    {/* 带有前后缀图标的输入框 */}
+    <air-input label="电话" name="phone" type="tel" placeholder="请输入电话">
+      <span slot="prefix" class="icon-phone">📞</span>
+      <span slot="suffix" class="icon-clear">❌</span>
+    </air-input>
+
+    {/* 带有正则验证的输入框 */}
+    <air-input
+      label="网站地址"
+      name="website"
+      type="url"
+      placeholder="请输入网站地址"
+      pattern="https?://.*"
+      error="{true}"
+      errorMessage="请输入有效的 URL"></air-input>
+
+    {/* 禁用输入框 */}
+    <air-input label="禁用输入框" name="disabled" placeholder="不可编辑" disabled="{true}"></air-input>
   </body>
 </html>

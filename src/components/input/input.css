@@ -1,0 +1,29 @@
+/* src/components/my-input/input.css */
+
+.input-wrapper {
+  @apply relative;
+}
+
+.input-label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.input-field {
+  @apply block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+}
+
+.input-normal {
+  @apply border-gray-300;
+}
+
+.input-error {
+  @apply border-red-500;
+}
+
+.input-disabled {
+  @apply bg-gray-100 cursor-not-allowed;
+}
+
+.input-error-message {
+  @apply mt-2 text-sm text-red-600;
+}
