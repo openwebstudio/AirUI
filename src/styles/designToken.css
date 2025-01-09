@@ -1,0 +1,214 @@
+/* 颜色 */
+.air-color-primary {
+  @apply text-blue-500;
+}
+.air-color-secondary {
+  @apply text-green-500;
+}
+.air-color-accent {
+  @apply text-yellow-500;
+}
+.air-bg-primary {
+  @apply bg-blue-500;
+}
+.air-bg-secondary {
+  @apply bg-green-500;
+}
+.air-bg-accent {
+  @apply bg-yellow-500;
+}
+.air-bg-light {
+  @apply bg-gray-100;
+}
+.air-bg-dark {
+  @apply bg-gray-900;
+}
+.air-bg-neutral {
+  @apply bg-gray-300;
+}
+.air-bg-background {
+  @apply bg-white;
+}
+.air-border {
+  @apply border-gray-300;
+}
+
+/* 圆角 */
+.air-rounded-small {
+  @apply rounded-sm;
+}
+.air-rounded-medium {
+  @apply rounded-md;
+}
+.air-rounded-large {
+  @apply rounded-lg;
+}
+.air-rounded-full {
+  @apply rounded-full;
+}
+
+/* 阴影 */
+.air-shadow-small {
+  @apply shadow-sm;
+}
+.air-shadow-medium {
+  @apply shadow-md;
+}
+.air-shadow-large {
+  @apply shadow-lg;
+}
+.air-shadow-none {
+  @apply shadow-none;
+}
+
+/* 间距 */
+.air-spacing-small {
+  @apply p-2 m-2;
+}
+.air-spacing-medium {
+  @apply p-4 m-4;
+}
+.air-spacing-large {
+  @apply p-6 m-6;
+}
+.air-spacing-xlarge {
+  @apply p-8 m-8;
+}
+
+/* 字体大小 */
+.air-text-small {
+  @apply text-sm;
+}
+.air-text-base {
+  @apply text-base;
+}
+.air-text-large {
+  @apply text-lg;
+}
+.air-text-xlarge {
+  @apply text-xl;
+}
+.air-text-xxlarge {
+  @apply text-2xl;
+}
+
+/* 字体粗细 */
+.air-font-thin {
+  @apply font-thin;
+}
+.air-font-light {
+  @apply font-light;
+}
+.air-font-normal {
+  @apply font-normal;
+}
+.air-font-medium {
+  @apply font-medium;
+}
+.air-font-semibold {
+  @apply font-semibold;
+}
+.air-font-bold {
+  @apply font-bold;
+}
+
+/* 字体行高 */
+.air-leading-snug {
+  @apply leading-snug;
+}
+.air-leading-normal {
+  @apply leading-normal;
+}
+.air-leading-loose {
+  @apply leading-loose;
+}
+
+/* 对齐 */
+.air-text-left {
+  @apply text-left;
+}
+.air-text-center {
+  @apply text-center;
+}
+.air-text-right {
+  @apply text-right;
+}
+
+/* 样式 */
+.air-border-solid {
+  @apply border-solid;
+}
+.air-border-dashed {
+  @apply border-dashed;
+}
+.air-border-dotted {
+  @apply border-dotted;
+}
+.air-border-none {
+  @apply border-none;
+}
+
+/* 透明度 */
+.air-opacity-50 {
+  @apply opacity-50;
+}
+.air-opacity-75 {
+  @apply opacity-75;
+}
+.air-opacity-100 {
+  @apply opacity-100;
+}
+
+/* 定位 */
+.air-absolute {
+  @apply absolute;
+}
+.air-relative {
+  @apply relative;
+}
+.air-fixed {
+  @apply fixed;
+}
+
+/* 垂直和水平对齐 */
+.air-align-top {
+  @apply align-top;
+}
+.air-align-middle {
+  @apply align-middle;
+}
+.air-align-bottom {
+  @apply align-bottom;
+}
+
+.air-items-start {
+  @apply items-start;
+}
+.air-items-center {
+  @apply items-center;
+}
+.air-items-end {
+  @apply items-end;
+}
+
+/* 列表 */
+.air-list-none {
+  @apply list-none;
+}
+.air-list-disc {
+  @apply list-disc;
+}
+.air-list-decimal {
+  @apply list-decimal;
+}
+
+/* 边框宽度 */
+.air-border-thin {
+  @apply border-2;
+}
+.air-border-medium {
+  @apply border-4;
+}
+.air-border-thick {
+  @apply border-8;
+}

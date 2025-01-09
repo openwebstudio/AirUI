@@ -8,12 +8,6 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconSet } from "./components/icon/icon";
 export { IconSet } from "./components/icon/icon";
 export namespace Components {
-    interface AirAvatar {
-        "bgColor": string;
-        "name": string;
-        "rounded": boolean;
-        "size": string;
-    }
     interface AirButton {
         "color": | "default"
     | "primary"
@@ -110,12 +104,6 @@ export interface AirCardCustomEvent<T> extends CustomEvent<T> {
     target: HTMLAirCardElement;
 }
 declare global {
-    interface HTMLAirAvatarElement extends Components.AirAvatar, HTMLStencilElement {
-    }
-    var HTMLAirAvatarElement: {
-        prototype: HTMLAirAvatarElement;
-        new (): HTMLAirAvatarElement;
-    };
     interface HTMLAirButtonElementEventMap {
         "buttonClick": { event: MouseEvent; selected: boolean };
     }
@@ -181,7 +169,6 @@ declare global {
         new (): HTMLAirTextElement;
     };
     interface HTMLElementTagNameMap {
-        "air-avatar": HTMLAirAvatarElement;
         "air-button": HTMLAirButtonElement;
         "air-button-group": HTMLAirButtonGroupElement;
         "air-card": HTMLAirCardElement;
@@ -191,12 +178,6 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface AirAvatar {
-        "bgColor"?: string;
-        "name"?: string;
-        "rounded"?: boolean;
-        "size"?: string;
-    }
     interface AirButton {
         "color"?: | "default"
     | "primary"
@@ -286,7 +267,6 @@ declare namespace LocalJSX {
       | 'fluid-heading';
     }
     interface IntrinsicElements {
-        "air-avatar": AirAvatar;
         "air-button": AirButton;
         "air-button-group": AirButtonGroup;
         "air-card": AirCard;
@@ -299,7 +279,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "air-avatar": LocalJSX.AirAvatar & JSXBase.HTMLAttributes<HTMLAirAvatarElement>;
             "air-button": LocalJSX.AirButton & JSXBase.HTMLAttributes<HTMLAirButtonElement>;
             "air-button-group": LocalJSX.AirButtonGroup & JSXBase.HTMLAttributes<HTMLAirButtonGroupElement>;
             "air-card": LocalJSX.AirCard & JSXBase.HTMLAttributes<HTMLAirCardElement>;

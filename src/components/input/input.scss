@@ -1,4 +1,5 @@
 /* src/components/my-input/input.css */
+@use "../../styles/designToken.css" as *;
 
 .input-wrapper {
   @apply relative;
@@ -9,10 +10,11 @@
 }
 
 .input-field {
-  @apply block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+  @apply block w-full px-4 py-2 border rounded-md shadow-sm sm:text-sm;
 }
 
-.input-normal {
+.input-normal,
+.input-error {
   @apply border-gray-300;
 }
 
