@@ -5,12 +5,36 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { IconSet } from "./components/icon/icon";
+export { IconSet } from "./components/icon/icon";
 export namespace Components {
+    /**
+     * @name AirAvatar
+     * @description 显示用户头像，支持头像图片、姓名首字母或默认样式，支持圆形和方形。
+     * @category Data Display
+     * @example <air-avatar size="medium" name="张三" src="/path/to/avatar.jpg" shape="circle" class="air-bg-primary"></air-avatar>
+     */
     interface AirAvatar {
-        "bgColor": string;
+        /**
+          * 边框样式，可自定义。
+         */
+        "border": string;
+        /**
+          * 用户姓名，用于生成首字母缩写。
+         */
         "name": string;
-        "rounded": boolean;
-        "size": string;
+        /**
+          * 头像形状，支持 'circle' 或 'square'。
+         */
+        "shape": 'circle' | 'square';
+        /**
+          * 头像尺寸，支持 `small`、`medium`、`large` 或自定义值（例如：`5rem`）。
+         */
+        "size": 'small' | 'medium' | 'large' | string;
+        /**
+          * 用户头像图片的 URL 地址。
+         */
+        "src": string;
     }
     interface AirButton {
         "color": | "default"
@@ -39,36 +63,34 @@ export namespace Components {
         "spacing": string;
     }
     interface AirCard {
+        "cardTitle": string;
         "content": string;
         "imageUrl": string;
         "isHighlighted": boolean;
         "size": 'small' | 'medium' | 'large';
-        "title": string;
     }
-    /**
-     * @name AirIcon
-     * @description Icons are visual symbols used to represent ideas, objects, or actions.
-     * @overview Icons are visual symbols used to represent ideas, objects, or actions. They communicate messages at a glance, afford interactivity, and draw attention to important information.
-     * @category General
-     * @example <air-icon name="home" size="2rem" />
-     */
     interface AirIcon {
-        /**
-          * Custom CSS class to apply to the icon.
-         */
-        "customClass": string;
-        /**
-          * Custom CSS style to apply to the icon.
-         */
-        "customStyle": { [key: string]: string } | string;
-        /**
-          * The identifier for the icon. This name corresponds to a specific SVG asset in the icon set.
-         */
+        "color": string;
+        "iconSet": IconSet;
         "name": string;
-        /**
-          * The size of the icon. This can be specified in pixels (px) or rem units to control the icon's dimensions. If a number is provided, it will be treated as rem units. For example, '16px', '2rem', or 2 would be valid values.
-         */
         "size": string;
+    }
+    interface AirInput {
+        "autofocus": boolean;
+        "customClass": string;
+        "customStyle": { [key: string]: string };
+        "disabled": boolean;
+        "error": boolean;
+        "errorMessage": string;
+        "label": string;
+        "maxLength": number;
+        "minLength": number;
+        "name": string;
+        "pattern": string;
+        "placeholder": string;
+        "required": boolean;
+        "type": string;
+        "value": string;
     }
     /**
      * @name AirText
@@ -100,6 +122,12 @@ export namespace Components {
       | 'body-emphasis'
       | 'fluid-heading';
     }
+    interface AirUserProfile {
+        "avatarSrc": string;
+        "editable": boolean;
+        "userBio": string;
+        "userName": string;
+    }
 }
 export interface AirButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -109,11 +137,13 @@ export interface AirCardCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAirCardElement;
 }
-export interface AirIconCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLAirIconElement;
-}
 declare global {
+    /**
+     * @name AirAvatar
+     * @description 显示用户头像，支持头像图片、姓名首字母或默认样式，支持圆形和方形。
+     * @category Data Display
+     * @example <air-avatar size="medium" name="张三" src="/path/to/avatar.jpg" shape="circle" class="air-bg-primary"></air-avatar>
+     */
     interface HTMLAirAvatarElement extends Components.AirAvatar, HTMLStencilElement {
     }
     var HTMLAirAvatarElement: {
@@ -160,29 +190,17 @@ declare global {
         prototype: HTMLAirCardElement;
         new (): HTMLAirCardElement;
     };
-    interface HTMLAirIconElementEventMap {
-        "iconClicked": any;
-    }
-    /**
-     * @name AirIcon
-     * @description Icons are visual symbols used to represent ideas, objects, or actions.
-     * @overview Icons are visual symbols used to represent ideas, objects, or actions. They communicate messages at a glance, afford interactivity, and draw attention to important information.
-     * @category General
-     * @example <air-icon name="home" size="2rem" />
-     */
     interface HTMLAirIconElement extends Components.AirIcon, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLAirIconElementEventMap>(type: K, listener: (this: HTMLAirIconElement, ev: AirIconCustomEvent<HTMLAirIconElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLAirIconElementEventMap>(type: K, listener: (this: HTMLAirIconElement, ev: AirIconCustomEvent<HTMLAirIconElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAirIconElement: {
         prototype: HTMLAirIconElement;
         new (): HTMLAirIconElement;
+    };
+    interface HTMLAirInputElement extends Components.AirInput, HTMLStencilElement {
+    }
+    var HTMLAirInputElement: {
+        prototype: HTMLAirInputElement;
+        new (): HTMLAirInputElement;
     };
     /**
      * @name AirText
@@ -196,21 +214,51 @@ declare global {
         prototype: HTMLAirTextElement;
         new (): HTMLAirTextElement;
     };
+    interface HTMLAirUserProfileElement extends Components.AirUserProfile, HTMLStencilElement {
+    }
+    var HTMLAirUserProfileElement: {
+        prototype: HTMLAirUserProfileElement;
+        new (): HTMLAirUserProfileElement;
+    };
     interface HTMLElementTagNameMap {
         "air-avatar": HTMLAirAvatarElement;
         "air-button": HTMLAirButtonElement;
         "air-button-group": HTMLAirButtonGroupElement;
         "air-card": HTMLAirCardElement;
         "air-icon": HTMLAirIconElement;
+        "air-input": HTMLAirInputElement;
         "air-text": HTMLAirTextElement;
+        "air-user-profile": HTMLAirUserProfileElement;
     }
 }
 declare namespace LocalJSX {
+    /**
+     * @name AirAvatar
+     * @description 显示用户头像，支持头像图片、姓名首字母或默认样式，支持圆形和方形。
+     * @category Data Display
+     * @example <air-avatar size="medium" name="张三" src="/path/to/avatar.jpg" shape="circle" class="air-bg-primary"></air-avatar>
+     */
     interface AirAvatar {
-        "bgColor"?: string;
+        /**
+          * 边框样式，可自定义。
+         */
+        "border"?: string;
+        /**
+          * 用户姓名，用于生成首字母缩写。
+         */
         "name"?: string;
-        "rounded"?: boolean;
-        "size"?: string;
+        /**
+          * 头像形状，支持 'circle' 或 'square'。
+         */
+        "shape"?: 'circle' | 'square';
+        /**
+          * 头像尺寸，支持 `small`、`medium`、`large` 或自定义值（例如：`5rem`）。
+         */
+        "size"?: 'small' | 'medium' | 'large' | string;
+        /**
+          * 用户头像图片的 URL 地址。
+         */
+        "src"?: string;
     }
     interface AirButton {
         "color"?: | "default"
@@ -240,41 +288,35 @@ declare namespace LocalJSX {
         "spacing"?: string;
     }
     interface AirCard {
+        "cardTitle"?: string;
         "content"?: string;
         "imageUrl"?: string;
         "isHighlighted"?: boolean;
         "onCardClicked"?: (event: AirCardCustomEvent<void>) => void;
         "size"?: 'small' | 'medium' | 'large';
-        "title"?: string;
     }
-    /**
-     * @name AirIcon
-     * @description Icons are visual symbols used to represent ideas, objects, or actions.
-     * @overview Icons are visual symbols used to represent ideas, objects, or actions. They communicate messages at a glance, afford interactivity, and draw attention to important information.
-     * @category General
-     * @example <air-icon name="home" size="2rem" />
-     */
     interface AirIcon {
-        /**
-          * Custom CSS class to apply to the icon.
-         */
-        "customClass"?: string;
-        /**
-          * Custom CSS style to apply to the icon.
-         */
-        "customStyle"?: { [key: string]: string } | string;
-        /**
-          * The identifier for the icon. This name corresponds to a specific SVG asset in the icon set.
-         */
+        "color"?: string;
+        "iconSet"?: IconSet;
         "name"?: string;
-        /**
-          * The event fired when the icon is clicked.
-         */
-        "onIconClicked"?: (event: AirIconCustomEvent<any>) => void;
-        /**
-          * The size of the icon. This can be specified in pixels (px) or rem units to control the icon's dimensions. If a number is provided, it will be treated as rem units. For example, '16px', '2rem', or 2 would be valid values.
-         */
         "size"?: string;
+    }
+    interface AirInput {
+        "autofocus"?: boolean;
+        "customClass"?: string;
+        "customStyle"?: { [key: string]: string };
+        "disabled"?: boolean;
+        "error"?: boolean;
+        "errorMessage"?: string;
+        "label"?: string;
+        "maxLength"?: number;
+        "minLength"?: number;
+        "name"?: string;
+        "pattern"?: string;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "type"?: string;
+        "value"?: string;
     }
     /**
      * @name AirText
@@ -306,31 +348,39 @@ declare namespace LocalJSX {
       | 'body-emphasis'
       | 'fluid-heading';
     }
+    interface AirUserProfile {
+        "avatarSrc"?: string;
+        "editable"?: boolean;
+        "userBio"?: string;
+        "userName"?: string;
+    }
     interface IntrinsicElements {
         "air-avatar": AirAvatar;
         "air-button": AirButton;
         "air-button-group": AirButtonGroup;
         "air-card": AirCard;
         "air-icon": AirIcon;
+        "air-input": AirInput;
         "air-text": AirText;
+        "air-user-profile": AirUserProfile;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            /**
+             * @name AirAvatar
+             * @description 显示用户头像，支持头像图片、姓名首字母或默认样式，支持圆形和方形。
+             * @category Data Display
+             * @example <air-avatar size="medium" name="张三" src="/path/to/avatar.jpg" shape="circle" class="air-bg-primary"></air-avatar>
+             */
             "air-avatar": LocalJSX.AirAvatar & JSXBase.HTMLAttributes<HTMLAirAvatarElement>;
             "air-button": LocalJSX.AirButton & JSXBase.HTMLAttributes<HTMLAirButtonElement>;
             "air-button-group": LocalJSX.AirButtonGroup & JSXBase.HTMLAttributes<HTMLAirButtonGroupElement>;
             "air-card": LocalJSX.AirCard & JSXBase.HTMLAttributes<HTMLAirCardElement>;
-            /**
-             * @name AirIcon
-             * @description Icons are visual symbols used to represent ideas, objects, or actions.
-             * @overview Icons are visual symbols used to represent ideas, objects, or actions. They communicate messages at a glance, afford interactivity, and draw attention to important information.
-             * @category General
-             * @example <air-icon name="home" size="2rem" />
-             */
             "air-icon": LocalJSX.AirIcon & JSXBase.HTMLAttributes<HTMLAirIconElement>;
+            "air-input": LocalJSX.AirInput & JSXBase.HTMLAttributes<HTMLAirInputElement>;
             /**
              * @name AirText
              * @description Typography for rendering headlines, paragraphs, captions, and body text with various style options.
@@ -338,6 +388,7 @@ declare module "@stencil/core" {
              * @example <air-text type="heading" level="1">Heading</air-text>
              */
             "air-text": LocalJSX.AirText & JSXBase.HTMLAttributes<HTMLAirTextElement>;
+            "air-user-profile": LocalJSX.AirUserProfile & JSXBase.HTMLAttributes<HTMLAirUserProfileElement>;
         }
     }
 }

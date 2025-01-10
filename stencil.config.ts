@@ -1,19 +1,19 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
-import tailwind, { tailwindHMR, setPluginConfigurationDefaults } from 'stencil-tailwind-plugin';
+import tailwind, {
+  tailwindHMR,
+  setPluginConfigurationDefaults,
+} from 'stencil-tailwind-plugin';
 import tailwindcss from 'tailwindcss';
 import tailwindConf from './tailwind.config';
 import autoprefixer from 'autoprefixer';
 
 setPluginConfigurationDefaults({
   tailwindConf,
-  tailwindCssPath: './src/styles/tailwind.css',
+  tailwindCssPath: 'src/styles/tailwind.css',
   postcss: {
-    plugins: [
-      tailwindcss(),
-      autoprefixer()
-    ]
-  }
+    plugins: [tailwindcss(), autoprefixer()],
+  },
 });
 
 export const config: Config = {
@@ -31,9 +31,5 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
-  plugins: [
-    sass(),
-    tailwind(),
-    tailwindHMR()
-  ]
+  plugins: [sass(), tailwind(), tailwindHMR()],
 };

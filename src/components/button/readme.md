@@ -26,6 +26,19 @@
 | `buttonClick` |             | `CustomEvent<{ event: MouseEvent; selected: boolean; }>` |
 
 
+## Dependencies
+
+### Used by
+
+ - [air-user-profile](../user-profile)
+
+### Graph
+```mermaid
+graph TD;
+  air-user-profile --> air-button
+  style air-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

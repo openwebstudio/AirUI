@@ -1,0 +1,10 @@
+:host {
+  display: inline-block;
+  font-size: var(--icon-size, 1.5em);
+  color: var(--icon-color, currentColor);
+}
+
+.air-icon {
+  font-family: 'Material Icons', 'Font Awesome', 'Boxicons', 'Iconfont',
+    'IconPark', sans-serif;
+}

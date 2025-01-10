@@ -1,0 +1,51 @@
+@use '../../styles/designToken.css' as *;
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .user-profile-avatar {
+    margin-bottom: 1rem;
+  }
+  
+  .user-info {
+    text-align: center;
+  }
+  
+  .user-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+
+  .card {
+    @apply max-w-sm rounded-lg shadow-lg overflow-hidden bg-white transition-all duration-300 ease-in-out;
+    border: 2px solid transparent; /* 默认透明边框，避免闪烁 */
+    border-radius: 12px; /* 使边角圆润 */
+  }
+  
+  /* 当卡片被悬停时，边框变粗并变成蓝色 */
+  .card:hover {
+    @apply transform;
+    border: 2px solid #3b82f6; /* 悬停时显示蓝色边框 */
+  }
+  
+  /* 高亮卡片时，使用较厚的边框，并将边框颜色变为绿色 */
+  
+  .card:active {
+    transition: transform 0.1s ease-out;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    margin-top: 1rem; /* 可选：为按钮添加一些上间距 */
+  }

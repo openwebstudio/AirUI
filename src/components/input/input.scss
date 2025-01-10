@@ -1,0 +1,46 @@
+/* src/components/my-input/input.css */
+@use "../../styles/designToken.css" as *;
+
+.input-wrapper {
+  @apply flex flex-col; 
+}
+
+.input-label {
+  @apply text-sm font-medium text-gray-700 mb-1;
+}
+
+.input-container {
+  @apply flex items-center border border-gray-300 rounded-md shadow-sm;
+  transition: border-color 0.2s ease;
+  @apply air-rounded-small; /* 应用圆角样式 */
+}
+
+.input-container:focus-within {
+  @apply border-blue-500;
+}
+
+slot[name='prefix'],
+slot[name='suffix'] {
+  @apply px-2 text-gray-500;
+}
+
+.input-field {
+  @apply flex-1 w-full px-4 py-2 text-sm outline-none;
+  @apply air-rounded-small; /* 应用圆角样式 */
+}
+
+.input-normal {
+  @apply border-gray-300;
+}
+
+.input-error {
+  @apply border-red-500;
+}
+
+.input-disabled {
+  @apply bg-gray-100 cursor-not-allowed;
+}
+
+.input-error-message {
+  @apply mt-2 text-sm text-red-600;
+}

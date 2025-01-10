@@ -1,0 +1,14 @@
+@use '../../styles/designToken.css' as *;
+
+/* Avatar Styles */
+.air-avatar-container {
+  @apply flex justify-center items-center overflow-hidden;
+}
+
+.air-avatar-image {
+  @apply w-full h-full object-cover;
+}
+
+.air-avatar-initials {
+  @apply text-xl font-bold;
+}
