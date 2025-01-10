@@ -1,4 +1,13 @@
 /* 颜色 */
+.air-avatar-size-small {
+  @apply w-12 h-12;
+}
+.air-avatar-size-medium {
+  @apply w-16 h-16;
+}
+.air-avatar-size-large {
+  @apply w-20 h-20;
+}
 .air-color-primary {
   @apply text-blue-500;
 }
@@ -32,7 +41,9 @@
 .air-border {
   @apply border-gray-300;
 }
-
+.air-border-radius {
+  border-radius: 12px;
+}
 /* 圆角 */
 .air-rounded-small {
   @apply rounded-sm;
@@ -45,6 +56,9 @@
 }
 .air-rounded-full {
   @apply rounded-full;
+}
+.air-rounded-none {
+  @apply rounded-none;
 }
 
 /* 阴影 */
@@ -211,4 +225,8 @@
 }
 .air-border-thick {
   @apply border-8;
+}
+.air-highlighted {
+  @apply transform;
+  border: 2px solid #3b82f6; /* 悬停时显示蓝色边框 */
 }

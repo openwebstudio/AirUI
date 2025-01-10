@@ -20,8 +20,13 @@ export class AirCard {
 
   render() {
     return (
-      <div class={`card ${this.isHighlighted ? 'highlighted' : ''} ${this.size}`} onClick={() => this.handleClick()}>
-        {this.imageUrl && <img src={this.imageUrl} alt="Card image" class="card-image" />}
+      <div
+        class={`card ${this.isHighlighted ? 'highlighted' : ''} ${this.size}`}
+        onClick={() => this.handleClick()}
+      >
+        {this.imageUrl && (
+          <img src={this.imageUrl} alt="Card image" class="card-image" />
+        )}
 
         <div class="card-body">
           <h2 class="card-title">

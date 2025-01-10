@@ -8,6 +8,34 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconSet } from "./components/icon/icon";
 export { IconSet } from "./components/icon/icon";
 export namespace Components {
+    /**
+     * @name AirAvatar
+     * @description 显示用户头像，支持头像图片、姓名首字母或默认样式，支持圆形和方形。
+     * @category Data Display
+     * @example <air-avatar size="medium" name="张三" src="/path/to/avatar.jpg" shape="circle" class="air-bg-primary"></air-avatar>
+     */
+    interface AirAvatar {
+        /**
+          * 边框样式，可自定义。
+         */
+        "border": string;
+        /**
+          * 用户姓名，用于生成首字母缩写。
+         */
+        "name": string;
+        /**
+          * 头像形状，支持 'circle' 或 'square'。
+         */
+        "shape": 'circle' | 'square';
+        /**
+          * 头像尺寸，支持 `small`、`medium`、`large` 或自定义值（例如：`5rem`）。
+         */
+        "size": 'small' | 'medium' | 'large' | string;
+        /**
+          * 用户头像图片的 URL 地址。
+         */
+        "src": string;
+    }
     interface AirButton {
         "color": | "default"
     | "primary"
@@ -94,6 +122,12 @@ export namespace Components {
       | 'body-emphasis'
       | 'fluid-heading';
     }
+    interface AirUserProfile {
+        "avatarSrc": string;
+        "editable": boolean;
+        "userBio": string;
+        "userName": string;
+    }
 }
 export interface AirButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -104,6 +138,18 @@ export interface AirCardCustomEvent<T> extends CustomEvent<T> {
     target: HTMLAirCardElement;
 }
 declare global {
+    /**
+     * @name AirAvatar
+     * @description 显示用户头像，支持头像图片、姓名首字母或默认样式，支持圆形和方形。
+     * @category Data Display
+     * @example <air-avatar size="medium" name="张三" src="/path/to/avatar.jpg" shape="circle" class="air-bg-primary"></air-avatar>
+     */
+    interface HTMLAirAvatarElement extends Components.AirAvatar, HTMLStencilElement {
+    }
+    var HTMLAirAvatarElement: {
+        prototype: HTMLAirAvatarElement;
+        new (): HTMLAirAvatarElement;
+    };
     interface HTMLAirButtonElementEventMap {
         "buttonClick": { event: MouseEvent; selected: boolean };
     }
@@ -168,16 +214,52 @@ declare global {
         prototype: HTMLAirTextElement;
         new (): HTMLAirTextElement;
     };
+    interface HTMLAirUserProfileElement extends Components.AirUserProfile, HTMLStencilElement {
+    }
+    var HTMLAirUserProfileElement: {
+        prototype: HTMLAirUserProfileElement;
+        new (): HTMLAirUserProfileElement;
+    };
     interface HTMLElementTagNameMap {
+        "air-avatar": HTMLAirAvatarElement;
         "air-button": HTMLAirButtonElement;
         "air-button-group": HTMLAirButtonGroupElement;
         "air-card": HTMLAirCardElement;
         "air-icon": HTMLAirIconElement;
         "air-input": HTMLAirInputElement;
         "air-text": HTMLAirTextElement;
+        "air-user-profile": HTMLAirUserProfileElement;
     }
 }
 declare namespace LocalJSX {
+    /**
+     * @name AirAvatar
+     * @description 显示用户头像，支持头像图片、姓名首字母或默认样式，支持圆形和方形。
+     * @category Data Display
+     * @example <air-avatar size="medium" name="张三" src="/path/to/avatar.jpg" shape="circle" class="air-bg-primary"></air-avatar>
+     */
+    interface AirAvatar {
+        /**
+          * 边框样式，可自定义。
+         */
+        "border"?: string;
+        /**
+          * 用户姓名，用于生成首字母缩写。
+         */
+        "name"?: string;
+        /**
+          * 头像形状，支持 'circle' 或 'square'。
+         */
+        "shape"?: 'circle' | 'square';
+        /**
+          * 头像尺寸，支持 `small`、`medium`、`large` 或自定义值（例如：`5rem`）。
+         */
+        "size"?: 'small' | 'medium' | 'large' | string;
+        /**
+          * 用户头像图片的 URL 地址。
+         */
+        "src"?: string;
+    }
     interface AirButton {
         "color"?: | "default"
     | "primary"
@@ -266,19 +348,34 @@ declare namespace LocalJSX {
       | 'body-emphasis'
       | 'fluid-heading';
     }
+    interface AirUserProfile {
+        "avatarSrc"?: string;
+        "editable"?: boolean;
+        "userBio"?: string;
+        "userName"?: string;
+    }
     interface IntrinsicElements {
+        "air-avatar": AirAvatar;
         "air-button": AirButton;
         "air-button-group": AirButtonGroup;
         "air-card": AirCard;
         "air-icon": AirIcon;
         "air-input": AirInput;
         "air-text": AirText;
+        "air-user-profile": AirUserProfile;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            /**
+             * @name AirAvatar
+             * @description 显示用户头像，支持头像图片、姓名首字母或默认样式，支持圆形和方形。
+             * @category Data Display
+             * @example <air-avatar size="medium" name="张三" src="/path/to/avatar.jpg" shape="circle" class="air-bg-primary"></air-avatar>
+             */
+            "air-avatar": LocalJSX.AirAvatar & JSXBase.HTMLAttributes<HTMLAirAvatarElement>;
             "air-button": LocalJSX.AirButton & JSXBase.HTMLAttributes<HTMLAirButtonElement>;
             "air-button-group": LocalJSX.AirButtonGroup & JSXBase.HTMLAttributes<HTMLAirButtonGroupElement>;
             "air-card": LocalJSX.AirCard & JSXBase.HTMLAttributes<HTMLAirCardElement>;
@@ -291,6 +388,7 @@ declare module "@stencil/core" {
              * @example <air-text type="heading" level="1">Heading</air-text>
              */
             "air-text": LocalJSX.AirText & JSXBase.HTMLAttributes<HTMLAirTextElement>;
+            "air-user-profile": LocalJSX.AirUserProfile & JSXBase.HTMLAttributes<HTMLAirUserProfileElement>;
         }
     }
 }

@@ -2,19 +2,34 @@
 @use "../../styles/designToken.css" as *;
 
 .input-wrapper {
-  @apply relative;
+  @apply flex flex-col; 
 }
 
 .input-label {
-  @apply block text-sm font-medium text-gray-700 mb-1;
+  @apply text-sm font-medium text-gray-700 mb-1;
+}
+
+.input-container {
+  @apply flex items-center border border-gray-300 rounded-md shadow-sm;
+  transition: border-color 0.2s ease;
+  @apply air-rounded-small; /* 应用圆角样式 */
+}
+
+.input-container:focus-within {
+  @apply border-blue-500;
+}
+
+slot[name='prefix'],
+slot[name='suffix'] {
+  @apply px-2 text-gray-500;
 }
 
 .input-field {
-  @apply block w-full px-4 py-2 border rounded-md shadow-sm sm:text-sm;
+  @apply flex-1 w-full px-4 py-2 text-sm outline-none;
+  @apply air-rounded-small; /* 应用圆角样式 */
 }
 
-.input-normal,
-.input-error {
+.input-normal {
   @apply border-gray-300;
 }
 

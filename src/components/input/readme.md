@@ -26,6 +26,19 @@
 | `value`        | `value`         |             | `string`                     | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [air-user-profile](../user-profile)
+
+### Graph
+```mermaid
+graph TD;
+  air-user-profile --> air-input
+  style air-input fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

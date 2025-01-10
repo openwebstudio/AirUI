@@ -18,6 +18,19 @@
 | `type`         | `type`          |             | `"body" \| "body-compact" \| "body-emphasis" \| "body-large" \| "code" \| "fluid-heading" \| "heading" \| "helper-text" \| "label" \| "legal"` | `'body'`    |
 
 
+## Dependencies
+
+### Used by
+
+ - [air-user-profile](../user-profile)
+
+### Graph
+```mermaid
+graph TD;
+  air-user-profile --> air-text
+  style air-text fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
