@@ -4,6 +4,7 @@
   color: var(--icon-color, currentColor);
 }
 
-.go-icon {
-  font-family: 'Material Icons', 'Font Awesome', 'Boxicons', 'Iconfont', 'IconPark', sans-serif;
+.air-icon {
+  font-family: 'Material Icons', 'Font Awesome', 'Boxicons', 'Iconfont',
+    'IconPark', sans-serif;
 }
