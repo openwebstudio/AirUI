@@ -37,24 +37,20 @@ export namespace Components {
         "src": string;
     }
     interface AirButton {
-        "color": | "default"
-    | "primary"
-    | "success"
-    | "info"
-    | "warning"
-    | "danger"
-    | "ghost";
         "disabled": boolean;
         "icon": string;
         "loading": boolean;
         "selected": boolean;
-        "size": "small" | "medium" | "large";
+        "size": 'small' | 'medium' | 'large';
+        "state": | 'primary'
+    | 'success'
+    | 'info'
+    | 'warning'
+    | 'danger'
+    | 'ghost'
+    | 'outline'
+    | 'solid';
         "suffixIcon": string;
-        "variant": | "solid"
-    | "outline"
-    | "text"
-    | "neo"
-    | "default";
     }
     interface AirButtonGroup {
         "customStyles": { [key: string]: string };
@@ -91,6 +87,9 @@ export namespace Components {
         "required": boolean;
         "type": string;
         "value": string;
+    }
+    interface AirPreviewer {
+        "size": 'small' | 'medium' | 'large';
     }
     /**
      * @name AirText
@@ -202,6 +201,12 @@ declare global {
         prototype: HTMLAirInputElement;
         new (): HTMLAirInputElement;
     };
+    interface HTMLAirPreviewerElement extends Components.AirPreviewer, HTMLStencilElement {
+    }
+    var HTMLAirPreviewerElement: {
+        prototype: HTMLAirPreviewerElement;
+        new (): HTMLAirPreviewerElement;
+    };
     /**
      * @name AirText
      * @description Typography for rendering headlines, paragraphs, captions, and body text with various style options.
@@ -227,6 +232,7 @@ declare global {
         "air-card": HTMLAirCardElement;
         "air-icon": HTMLAirIconElement;
         "air-input": HTMLAirInputElement;
+        "air-previewer": HTMLAirPreviewerElement;
         "air-text": HTMLAirTextElement;
         "air-user-profile": HTMLAirUserProfileElement;
     }
@@ -261,25 +267,21 @@ declare namespace LocalJSX {
         "src"?: string;
     }
     interface AirButton {
-        "color"?: | "default"
-    | "primary"
-    | "success"
-    | "info"
-    | "warning"
-    | "danger"
-    | "ghost";
         "disabled"?: boolean;
         "icon"?: string;
         "loading"?: boolean;
         "onButtonClick"?: (event: AirButtonCustomEvent<{ event: MouseEvent; selected: boolean }>) => void;
         "selected"?: boolean;
-        "size"?: "small" | "medium" | "large";
+        "size"?: 'small' | 'medium' | 'large';
+        "state"?: | 'primary'
+    | 'success'
+    | 'info'
+    | 'warning'
+    | 'danger'
+    | 'ghost'
+    | 'outline'
+    | 'solid';
         "suffixIcon"?: string;
-        "variant"?: | "solid"
-    | "outline"
-    | "text"
-    | "neo"
-    | "default";
     }
     interface AirButtonGroup {
         "customStyles"?: { [key: string]: string };
@@ -317,6 +319,9 @@ declare namespace LocalJSX {
         "required"?: boolean;
         "type"?: string;
         "value"?: string;
+    }
+    interface AirPreviewer {
+        "size"?: 'small' | 'medium' | 'large';
     }
     /**
      * @name AirText
@@ -361,6 +366,7 @@ declare namespace LocalJSX {
         "air-card": AirCard;
         "air-icon": AirIcon;
         "air-input": AirInput;
+        "air-previewer": AirPreviewer;
         "air-text": AirText;
         "air-user-profile": AirUserProfile;
     }
@@ -381,6 +387,7 @@ declare module "@stencil/core" {
             "air-card": LocalJSX.AirCard & JSXBase.HTMLAttributes<HTMLAirCardElement>;
             "air-icon": LocalJSX.AirIcon & JSXBase.HTMLAttributes<HTMLAirIconElement>;
             "air-input": LocalJSX.AirInput & JSXBase.HTMLAttributes<HTMLAirInputElement>;
+            "air-previewer": LocalJSX.AirPreviewer & JSXBase.HTMLAttributes<HTMLAirPreviewerElement>;
             /**
              * @name AirText
              * @description Typography for rendering headlines, paragraphs, captions, and body text with various style options.

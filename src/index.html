@@ -22,83 +22,54 @@
       rel="stylesheet"
       href="https://unpkg.com/tailwindcss@3.0.7/lib/css/preflight.css"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@icon-park/svg/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/@icon-park/svg/styles.css">
     <script type="module" src="./build/aircomponents.esm.js"></script>
     <script nomodule src="./build/aircomponents.js"></script>
   </head>
   <body>
+<!-- 按钮颜色展示 -->
+<air-button state="primary">主按钮</air-button>
+<air-button state="success">成功按钮</air-button>
+<air-button state="info">信息按钮</air-button>
+<air-button state="warning">警告按钮</air-button>
+<air-button state="danger">危险按钮</air-button>
+<air-button state="ghost">幽灵按钮</air-button>
 
-    <h1 class="text-4xl font-bold text-center mb-6">Air Avatar Showcase</h1>
+<!-- 按钮样式展示 -->
+<air-button state="solid">实心按钮</air-button>
+<air-button state="outline">描边按钮</air-button>
+<air-button state="text">文字按钮</air-button>
+<air-button state="neo">霓虹按钮</air-button>
+<air-button state="default">默认按钮</air-button>
 
-    <air-user-profile
+<!-- 图标按钮展示 -->
+<air-button icon="⭐">图标按钮</air-button>
+<air-button suffix-icon="✓">后缀图标按钮</air-button>
+<air-button icon="🔄" suffix-icon="✓">双图标按钮</air-button>
+
+<!-- 加载中、禁用、选中状态展示 -->
+<air-button loading></air-button>
+<air-button disabled>禁用按钮</air-button>
+<air-button disabled icon="❌">禁用图标按钮</air-button>
+<air-button selected>选中按钮</air-button>
+<air-button selected icon="✔️">选中图标按钮</air-button>
+
+<!-- 不同大小按钮展示 -->
+<air-button size="small">小按钮</air-button>
+<air-button size="medium">中按钮</air-button>
+<air-button size="large">大按钮</air-button>
+<air-previewer blitz-url="https://stackblitz.com/edit/example">
+  <air-user-profile
     avatar-src="https://avatars.githubusercontent.com/u/146103794?v=4"
     user-name="Zhi"
     user-bio="前端开发者，热爱技术分享"
     editable="true"
   ></air-user-profile>
-
-  <!-- Case 2: Read-Only User Profile -->
-  <air-user-profile
-    avatar-src="https://avatars.githubusercontent.com/u/146103794?v=4"
-    user-name="John Doe"
-    user-bio="Web Developer with a passion for open-source projects."
-  >
-  </air-user-profile>
-
-  <!-- Case 3: Editable User Profile -->
-  <air-user-profile
-    avatar-src="https://avatars.githubusercontent.com/u/146103794?v=4"
-    user-name="Jane Smith"
-    user-bio="Product Manager, loves tech and coffee."
-    editable
-  >
-  </air-user-profile>
-
-  <!-- Case 4: User Without Bio -->
-  <air-user-profile
-    avatar-src="https://avatars.githubusercontent.com/u/146103794?v=4"
-    user-name="Anonymous"
-  >
-  </air-user-profile>
-
-  <!-- Case 5: Custom Slot Content -->
-  <air-user-profile
-    avatar-src="https://avatars.githubusercontent.com/u/146103794?v=4"
-    user-name="Custom User"
-  >
-    <div slot="title" class="custom-title">
-      🔥 Custom Title: Super User
-    </div>
-    <div slot="content" class="custom-content">
-      This is a custom bio for a special user.
-    </div>
-  </air-user-profile>
-
-  <!-- Case 6: Minimal Profile -->
-  <air-user-profile
-    avatar-src="https://avatars.githubusercontent.com/u/146103794?v=4"
-    user-name="Minimal User"
-    user-bio="Just another user with minimal info."
-  >
-  </air-user-profile>
-
-  <!-- Case 7: Extended Profile with Stats -->
-  <air-user-profile
-    avatar-src="https://avatars.githubusercontent.com/u/146103794?v=4"
-    user-name="Stats User"
-    user-bio="UI/UX Designer with an eye for detail."
-  >
-    <div slot="content">
-      <p>Bio: Passionate about design systems.</p>
-      <div style="display: flex; justify-content: space-around;">
-        <div>
-          <strong>Followers:</strong> 1200
-        </div>
-        <div>
-          <strong>Following:</strong> 180
-        </div>
-      </div>
-    </div>
-  </air-user-profile>
+</air-previewer>
 
     </div>
   </body>
