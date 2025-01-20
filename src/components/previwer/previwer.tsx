@@ -1,4 +1,4 @@
-import { Component, Prop, State, h, Element } from '@stencil/core';
+import { Component, Prop, State, h, Element, Watch } from '@stencil/core';
 
 @Component({
   tag: 'air-previewer',
@@ -6,13 +6,21 @@ import { Component, Prop, State, h, Element } from '@stencil/core';
   shadow: true,
 })
 export class AirPreviewer {
-  @Prop() blitzUrl: string;
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
+  @Prop() customLink: string = 'https://github.com/SisyphusZheng/Components'; // 默认链接
   @State() code: string = '';
   @State() showSource: boolean = false;
   @Element() el: HTMLElement;
 
   observer: MutationObserver;
+
+  // 监听 customLink 的变化
+  @Watch('customLink')
+  watchCustomLink(newValue: string) {
+    console.log('customLink changed to:', newValue);
+  }
+
+  // 验证链接是否有
 
   componentDidLoad() {
     const slot = this.el.shadowRoot.querySelector('slot');
@@ -81,6 +89,7 @@ export class AirPreviewer {
       .replace(/></g, '>\n<')
       .replace(/( )*<(\/?)(\w+)([^>]*)>/g, (match, _, closing, tag, rest) => {
         const indent = closing ? '  ' : '';
+        console.log(match); // 在这里使用 match，例如打印完整的匹配内容
         return `${indent}<${closing}${tag}${rest}>`;
       });
     return formatted;
@@ -102,10 +111,10 @@ export class AirPreviewer {
 
         <div class="actions">
           <a
-            href={this.blitzUrl}
+            href={this.customLink}
             target="_blank"
             class="action-btn"
-            title="View on StackBlitz"
+            title="View on YourLink"
           >
             <air-icon
               name="open_in_new"
@@ -143,18 +152,17 @@ export class AirPreviewer {
               value={this.code}
               style={{
                 width: '100%',
-                whiteSpace: 'pre-wrap' /* 改为 pre-wrap 以支持换行 */,
+                whiteSpace: 'pre-wrap',
                 padding: '12px',
-                fontSize: '1rem' /* 合理的字体大小 */,
-                lineHeight: '1.5' /* 改善文本的可读性 */,
-                borderRadius: '8px' /* 圆角效果 */,
-                border: '1px solid #ddd' /* 浅灰色边框 */,
-                backgroundColor: 'rgba(247, 247, 247, 0.9)' /* 半透明背景 */,
-                color: '#333' /* 字体颜色 */,
-                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' /* 添加轻微的阴影 */,
-                resize: 'vertical' /* 允许垂直调整大小 */,
-                transition:
-                  'border-color 0.3s, box-shadow 0.3s' /* 平滑过渡效果 */,
+                fontSize: '1rem',
+                lineHeight: '1.5',
+                borderRadius: '8px',
+                border: '1px solid #ddd',
+                backgroundColor: 'rgba(247, 247, 247, 0.9)',
+                color: '#333',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                resize: 'vertical',
+                transition: 'border-color 0.3s, box-shadow 0.3s',
               }}
               onInput={(event) => this.handleInputChange(event)}
             />
