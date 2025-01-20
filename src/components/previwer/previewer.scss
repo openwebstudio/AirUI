@@ -1,43 +1,52 @@
 /* 预览容器 */
 .preview-container {
-  @apply border border-gray-300 rounded-md shadow-md bg-white p-4 flex flex-col space-y-4;
+  @apply border border-gray-300 rounded-xl shadow-lg p-6 flex flex-col space-y-6;
+  backdrop-filter: blur(15px); /* 增强的背景模糊效果 */
+  background-color: rgba(255, 255, 255, 0.7); /* 使用透明背景 */
+  width: 400px; /* 设置固定宽度 */
+  height: 400px; /* 设置固定高度 */
+  transform-origin: center; /* 确保从容器中心缩放 */
+  position: relative;
+  overflow: hidden; /* 防止内容溢出容器 */
 }
 
 /* 预览区域 */
 .preview {
-  @apply border border-gray-200 rounded-md bg-gray-50 p-4 overflow-hidden;
+  @apply w-full h-full p-5 overflow-hidden flex-grow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* slot部分内容调整 */
+.preview-container ::slotted(*) {
+  display: block;
+  max-width: 100%; /* 限制最大宽度为100% */
+  max-height: 100%; /* 限制最大高度为100% */
+  transform: scale(0.8); /* 将slot内容缩小到原尺寸的一半 */
+  transform-origin: center; /* 确保从容器中心缩放 */
+  overflow-y: auto; /* 启用垂直滚动条 */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* 增加过渡效果 */
+}
+
+.preview-container ::slotted(*):hover {
+  opacity: 0.8; /* 鼠标悬停时调整透明度 */
 }
 
 /* 操作按钮区域 */
 .actions {
-  @apply flex items-center space-x-2 justify-end;
+  @apply flex items-center space-x-4 justify-end mt-4;
 }
 
 .action-btn {
-  @apply w-8 h-8 flex items-center justify-center rounded-md transition-colors duration-300 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500;
+  @apply w-12 h-12 flex items-center justify-center rounded-lg transition-all duration-300
+         hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500
+         transform hover:scale-110; /* 鼠标悬停时按钮增大效果 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
 }
 
-.icon {
-  @apply w-5 h-5 text-gray-600;
+.action-btn:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* 鼠标悬停时加强阴影 */
 }
 
-.icon-blitz {
-  @apply text-yellow-500;
-}
-
-.icon-source {
-  @apply text-blue-500;
-}
-
-/* 源码显示区域 */
-.source-code {
-  @apply border border-gray-200 rounded-md bg-gray-50 p-4 text-sm overflow-x-auto;
-}
-
-.source-code pre {
-  @apply m-0 font-mono text-gray-700;
-}
-
-.source-code code {
-  @apply whitespace-pre-wrap break-words;
-}
+/* 文本区域样式 */

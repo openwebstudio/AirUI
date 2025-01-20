@@ -62,6 +62,7 @@
     "url": "git+https://github.com/aircomponents/Components.git"
   },
   "dependencies": {
+    "ace-builds": "^1.37.5",
     "classnames": "^2.5.1"
   }
 }

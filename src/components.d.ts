@@ -89,6 +89,7 @@ export namespace Components {
         "value": string;
     }
     interface AirPreviewer {
+        "blitzUrl": string;
         "size": 'small' | 'medium' | 'large';
     }
     /**
@@ -321,6 +322,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface AirPreviewer {
+        "blitzUrl"?: string;
         "size"?: 'small' | 'medium' | 'large';
     }
     /**

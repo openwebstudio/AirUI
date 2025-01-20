@@ -1,4 +1,4 @@
-import { h, Component, State, Prop, Element } from '@stencil/core';
+import { Component, Prop, State, h, Element } from '@stencil/core';
 
 @Component({
   tag: 'air-previewer',
@@ -6,46 +6,40 @@ import { h, Component, State, Prop, Element } from '@stencil/core';
   shadow: true,
 })
 export class AirPreviewer {
-  @Element() el: HTMLElement;
-
+  @Prop() blitzUrl: string;
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
-
   @State() code: string = '';
   @State() showSource: boolean = false;
-  @State() generatedBlitzUrl: string = '';
+  @Element() el: HTMLElement;
 
-  private observer: MutationObserver;
+  observer: MutationObserver;
 
   componentDidLoad() {
     const slot = this.el.shadowRoot.querySelector('slot');
+
     if (slot) {
       const updateCode = () => {
         const nodes = slot.assignedNodes({ flatten: true });
         const formattedHTML = nodes
           .map((node) => {
-            if (node.nodeType === Node.TEXT_NODE) {
-              return node.textContent?.trim() || ''; // Keep text content
-            }
             if (node.nodeType === Node.ELEMENT_NODE) {
-              return (node as Element).outerHTML; // Cast to Element to access outerHTML
+              return this.formatHTML((node as HTMLElement).outerHTML);
             }
-            return ''; // Ignore non-element and non-text nodes
+            if (node.nodeType === Node.TEXT_NODE) {
+              return node.textContent?.trim() || '';
+            }
+            return '';
           })
           .filter((content) => content !== '')
           .join('\n');
         this.code = formattedHTML.trim();
       };
 
-      // Initial content extraction
       updateCode();
 
-      // Observe slot content changes
       this.observer = new MutationObserver(updateCode);
       this.observer.observe(slot, { childList: true, subtree: true });
     }
-
-    // Generate Blitz URL if not provided
-    this.generatedBlitzUrl = this.generateBlitzUrl();
   }
 
   disconnectedCallback() {
@@ -58,28 +52,20 @@ export class AirPreviewer {
     const textarea = event.target as HTMLTextAreaElement;
     this.code = textarea.value;
 
-    // Update DOM content after code change
     const parser = new DOMParser();
     const doc = parser.parseFromString(this.code, 'text/html');
     const slotContent = doc.body.childNodes;
-    const slot = this.el.shadowRoot.querySelector('slot');
 
+    const slot = this.el.shadowRoot.querySelector('slot');
     if (slot) {
       const parentNode = this.el.querySelector('[slot]') || this.el;
-
-      // Remove existing children before appending new ones
       while (parentNode.firstChild) {
         parentNode.firstChild.remove();
       }
-
-      // Clone and append new nodes
       slotContent.forEach((node) => {
         parentNode.appendChild(node.cloneNode(true));
       });
     }
-
-    // Regenerate Blitz URL after code update
-    this.generatedBlitzUrl = this.generateBlitzUrl();
   }
 
   copyToClipboard() {
@@ -90,16 +76,14 @@ export class AirPreviewer {
     }
   }
 
-  generateBlitzUrl(): string {
-    if (!this.code) {
-      console.warn('Code is empty, unable to generate StackBlitz URL.');
-      return '';
-    }
-    // URL encode the code
-    const encodedCode = encodeURIComponent(this.code);
-    const url = `https://stackblitz.com/edit/${encodedCode}`;
-    console.log('Generated Blitz URL:', url); // For debugging
-    return url;
+  formatHTML(html: string): string {
+    const formatted = html
+      .replace(/></g, '>\n<')
+      .replace(/( )*<(\/?)(\w+)([^>]*)>/g, (match, _, closing, tag, rest) => {
+        const indent = closing ? '  ' : '';
+        return `${indent}<${closing}${tag}${rest}>`;
+      });
+    return formatted;
   }
 
   render() {
@@ -118,19 +102,17 @@ export class AirPreviewer {
 
         <div class="actions">
           <a
-            href={this.generatedBlitzUrl || '#'}
+            href={this.blitzUrl}
             target="_blank"
             class="action-btn"
             title="View on StackBlitz"
-            rel="noopener noreferrer"
           >
             <air-icon
               name="open_in_new"
               iconSet="material-icons"
               color="#007ACC"
-            />
+            ></air-icon>
           </a>
-
           <button
             onClick={() => (this.showSource = !this.showSource)}
             class="action-btn"
@@ -140,9 +122,8 @@ export class AirPreviewer {
               name={this.showSource ? 'visibility_off' : 'visibility'}
               iconSet="material-icons"
               color="currentColor"
-            />
+            ></air-icon>
           </button>
-
           <button
             onClick={() => this.copyToClipboard()}
             class="action-btn"
@@ -152,7 +133,7 @@ export class AirPreviewer {
               name="content_copy"
               iconSet="material-icons"
               color="currentColor"
-            />
+            ></air-icon>
           </button>
         </div>
 
@@ -162,11 +143,18 @@ export class AirPreviewer {
               value={this.code}
               style={{
                 width: '100%',
-                height: '200px',
-                fontFamily: 'monospace',
-                fontSize: '14px',
-                whiteSpace: 'pre',
-                overflow: 'auto',
+                whiteSpace: 'pre-wrap' /* 改为 pre-wrap 以支持换行 */,
+                padding: '12px',
+                fontSize: '1rem' /* 合理的字体大小 */,
+                lineHeight: '1.5' /* 改善文本的可读性 */,
+                borderRadius: '8px' /* 圆角效果 */,
+                border: '1px solid #ddd' /* 浅灰色边框 */,
+                backgroundColor: 'rgba(247, 247, 247, 0.9)' /* 半透明背景 */,
+                color: '#333' /* 字体颜色 */,
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' /* 添加轻微的阴影 */,
+                resize: 'vertical' /* 允许垂直调整大小 */,
+                transition:
+                  'border-color 0.3s, box-shadow 0.3s' /* 平滑过渡效果 */,
               }}
               onInput={(event) => this.handleInputChange(event)}
             />
