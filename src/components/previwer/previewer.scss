@@ -3,11 +3,22 @@
   @apply border border-gray-300 rounded-xl shadow-lg p-6 flex flex-col space-y-6;
   backdrop-filter: blur(15px); /* 增强的背景模糊效果 */
   background-color: rgba(255, 255, 255, 0.7); /* 使用透明背景 */
-  width: 400px; /* 设置固定宽度 */
-  height: 400px; /* 设置固定高度 */
   transform-origin: center; /* 确保从容器中心缩放 */
   position: relative;
   overflow: hidden; /* 防止内容溢出容器 */
+}
+
+/* Tailwind Config 或者使用 @apply 来设置这些样式 */
+.preview-small {
+  @apply w-64 h-64; /* 小的预览 */
+}
+
+.preview-medium {
+  @apply w-[400px] h-[400px]; /* 固定宽度和高度 */
+}
+
+.preview-large {
+  @apply w-full h-[400px]; /* 水平方向平铺，固定高度 */
 }
 
 /* 预览区域 */
