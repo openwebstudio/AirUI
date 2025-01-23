@@ -56,9 +56,7 @@ export class UserProfile {
               type="text"
             ></air-input>
             <div class="button-wrapper">
-              <air-button variant="solid" color="primary">
-                保存
-              </air-button>
+              <air-button state="primary">保存</air-button>
             </div>
           </div>
         )}

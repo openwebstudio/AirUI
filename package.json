@@ -1,6 +1,6 @@
 {
-  "name": "@aircomponents/ui",
-  "version": "0.0.9",
+  "name": "@airdesign/ui",
+  "version": "0.0.12",
   "private": false,
   "license": "MIT",
   "description": "custom components",
@@ -62,6 +62,7 @@
     "url": "git+https://github.com/aircomponents/Components.git"
   },
   "dependencies": {
+    "ace-builds": "^1.37.5",
     "classnames": "^2.5.1"
   }
 }

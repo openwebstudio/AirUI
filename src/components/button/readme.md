@@ -7,16 +7,15 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type                                                                                | Default     |
-| ------------ | ------------- | ----------- | ----------------------------------------------------------------------------------- | ----------- |
-| `color`      | `color`       |             | `"danger" \| "default" \| "ghost" \| "info" \| "primary" \| "success" \| "warning"` | `"default"` |
-| `disabled`   | `disabled`    |             | `boolean`                                                                           | `false`     |
-| `icon`       | `icon`        |             | `string`                                                                            | `""`        |
-| `loading`    | `loading`     |             | `boolean`                                                                           | `false`     |
-| `selected`   | `selected`    |             | `boolean`                                                                           | `false`     |
-| `size`       | `size`        |             | `"large" \| "medium" \| "small"`                                                    | `"medium"`  |
-| `suffixIcon` | `suffix-icon` |             | `string`                                                                            | `""`        |
-| `variant`    | `variant`     |             | `"default" \| "neo" \| "outline" \| "solid" \| "text"`                              | `"default"` |
+| Property     | Attribute     | Description | Type                                                                                           | Default     |
+| ------------ | ------------- | ----------- | ---------------------------------------------------------------------------------------------- | ----------- |
+| `disabled`   | `disabled`    |             | `boolean`                                                                                      | `false`     |
+| `icon`       | `icon`        |             | `string`                                                                                       | `''`        |
+| `loading`    | `loading`     |             | `boolean`                                                                                      | `false`     |
+| `selected`   | `selected`    |             | `boolean`                                                                                      | `false`     |
+| `size`       | `size`        |             | `"large" \| "medium" \| "small"`                                                               | `'medium'`  |
+| `state`      | `state`       |             | `"danger" \| "ghost" \| "info" \| "outline" \| "primary" \| "solid" \| "success" \| "warning"` | `'primary'` |
+| `suffixIcon` | `suffix-icon` |             | `string`                                                                                       | `''`        |
 
 
 ## Events
