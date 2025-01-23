@@ -23,7 +23,7 @@
 Install Air-Components using npm:
 
 ```bash
-npm install @aircomponents/ui
+npm install @airdesign/ui
 ```
 
 ### CDN
