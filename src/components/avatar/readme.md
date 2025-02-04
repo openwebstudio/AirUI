@@ -20,11 +20,13 @@
 
 ### Used by
 
+ - [air-resume](../resume)
  - [air-user-profile](../user-profile)
 
 ### Graph
 ```mermaid
 graph TD;
+  air-resume --> air-avatar
   air-user-profile --> air-avatar
   style air-avatar fill:#f9f,stroke:#333,stroke-width:4px
 ```

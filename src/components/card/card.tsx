@@ -3,15 +3,15 @@ import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 @Component({
   tag: 'air-card',
   styleUrl: 'card.css',
-  shadow: true,
+  shadow: false,
 })
 export class AirCard {
   @Prop() cardTitle: string = 'Card Title';
   @Prop() content: string = 'This is the card content.';
   @Prop() imageUrl: string = '';
   @Prop() isHighlighted: boolean = false;
-  @Prop() size: 'small' | 'medium' | 'large' = 'medium';
-
+  @Prop() size: 'small' | 'medium' | 'large' | 'auto' = 'medium';
+  @Prop() center: boolean = false;
   @Event() cardClicked: EventEmitter<void>;
 
   private handleClick() {
@@ -21,7 +21,9 @@ export class AirCard {
   render() {
     return (
       <div
-        class={`card ${this.isHighlighted ? 'highlighted' : ''} ${this.size}`}
+        class={`card ${this.isHighlighted ? 'highlighted' : ''} ${this.size} ${
+          this.center ? 'center' : ''
+        }`}
         onClick={() => this.handleClick()}
       >
         {this.imageUrl && (

@@ -22,11 +22,13 @@
 
 ### Used by
 
+ - [air-resume](../resume)
  - [air-user-profile](../user-profile)
 
 ### Graph
 ```mermaid
 graph TD;
+  air-resume --> air-text
   air-user-profile --> air-text
   style air-text fill:#f9f,stroke:#333,stroke-width:4px
 ```

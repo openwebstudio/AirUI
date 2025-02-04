@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Prop, State, h, Element } from '@stencil/core';
 
 @Component({
   tag: 'air-input',
@@ -6,6 +6,7 @@ import { Component, Prop, State, h } from '@stencil/core';
   shadow: true,
 })
 export class AirInput {
+  @Element() el: HTMLElement; // 获取组件的根元素
   @Prop() label: string;
   @Prop() placeholder: string;
   @Prop() value: string;
@@ -33,6 +34,11 @@ export class AirInput {
     } else {
       this.error = false;
     }
+  }
+
+  // 提供方法访问原生 input 元素
+  getInputElement() {
+    return this.el.shadowRoot?.querySelector('input');
   }
 
   render() {

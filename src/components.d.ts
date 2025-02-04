@@ -51,6 +51,7 @@ export namespace Components {
     | 'outline'
     | 'solid';
         "suffixIcon": string;
+        "type": 'button' | 'submit' | 'reset';
     }
     interface AirButtonGroup {
         "customStyles": { [key: string]: string };
@@ -60,10 +61,13 @@ export namespace Components {
     }
     interface AirCard {
         "cardTitle": string;
+        "center": boolean;
         "content": string;
         "imageUrl": string;
         "isHighlighted": boolean;
-        "size": 'small' | 'medium' | 'large';
+        "size": 'small' | 'medium' | 'large' | 'auto';
+    }
+    interface AirChat {
     }
     interface AirIcon {
         "color": string;
@@ -91,6 +95,35 @@ export namespace Components {
     interface AirPreviewer {
         "customLink": string;
         "size": 'small' | 'medium' | 'large';
+    }
+    interface AirRating {
+        /**
+          * 自定义样式（CSS键值对对象）
+         */
+        "customStyle": { [key: string]: string };
+        /**
+          * 未选中图标
+         */
+        "emptyIcon": string;
+        /**
+          * 选中图标（直接使用air-icon的name）
+         */
+        "filledIcon": string;
+        "iconSet": IconSet;
+        /**
+          * 当前评分等级 (0~max)
+         */
+        "level": number;
+        /**
+          * 最大星数（1-10）
+         */
+        "max": number;
+    }
+    interface AirTag {
+        "closable": boolean;
+        "color": 'gray' | 'blue' | 'green' | 'yellow' | 'red';
+        "rounded": 'none' | 'md' | 'full';
+        "size": 'sm' | 'md';
     }
     /**
      * @name AirText
@@ -122,12 +155,6 @@ export namespace Components {
       | 'body-emphasis'
       | 'fluid-heading';
     }
-    interface AirUserProfile {
-        "avatarSrc": string;
-        "editable": boolean;
-        "userBio": string;
-        "userName": string;
-    }
 }
 export interface AirButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -136,6 +163,14 @@ export interface AirButtonCustomEvent<T> extends CustomEvent<T> {
 export interface AirCardCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAirCardElement;
+}
+export interface AirRatingCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAirRatingElement;
+}
+export interface AirTagCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAirTagElement;
 }
 declare global {
     /**
@@ -190,6 +225,12 @@ declare global {
         prototype: HTMLAirCardElement;
         new (): HTMLAirCardElement;
     };
+    interface HTMLAirChatElement extends Components.AirChat, HTMLStencilElement {
+    }
+    var HTMLAirChatElement: {
+        prototype: HTMLAirChatElement;
+        new (): HTMLAirChatElement;
+    };
     interface HTMLAirIconElement extends Components.AirIcon, HTMLStencilElement {
     }
     var HTMLAirIconElement: {
@@ -208,6 +249,40 @@ declare global {
         prototype: HTMLAirPreviewerElement;
         new (): HTMLAirPreviewerElement;
     };
+    interface HTMLAirRatingElementEventMap {
+        "ratingChange": number;
+    }
+    interface HTMLAirRatingElement extends Components.AirRating, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAirRatingElementEventMap>(type: K, listener: (this: HTMLAirRatingElement, ev: AirRatingCustomEvent<HTMLAirRatingElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAirRatingElementEventMap>(type: K, listener: (this: HTMLAirRatingElement, ev: AirRatingCustomEvent<HTMLAirRatingElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAirRatingElement: {
+        prototype: HTMLAirRatingElement;
+        new (): HTMLAirRatingElement;
+    };
+    interface HTMLAirTagElementEventMap {
+        "airClose": void;
+    }
+    interface HTMLAirTagElement extends Components.AirTag, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAirTagElementEventMap>(type: K, listener: (this: HTMLAirTagElement, ev: AirTagCustomEvent<HTMLAirTagElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAirTagElementEventMap>(type: K, listener: (this: HTMLAirTagElement, ev: AirTagCustomEvent<HTMLAirTagElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAirTagElement: {
+        prototype: HTMLAirTagElement;
+        new (): HTMLAirTagElement;
+    };
     /**
      * @name AirText
      * @description Typography for rendering headlines, paragraphs, captions, and body text with various style options.
@@ -220,22 +295,18 @@ declare global {
         prototype: HTMLAirTextElement;
         new (): HTMLAirTextElement;
     };
-    interface HTMLAirUserProfileElement extends Components.AirUserProfile, HTMLStencilElement {
-    }
-    var HTMLAirUserProfileElement: {
-        prototype: HTMLAirUserProfileElement;
-        new (): HTMLAirUserProfileElement;
-    };
     interface HTMLElementTagNameMap {
         "air-avatar": HTMLAirAvatarElement;
         "air-button": HTMLAirButtonElement;
         "air-button-group": HTMLAirButtonGroupElement;
         "air-card": HTMLAirCardElement;
+        "air-chat": HTMLAirChatElement;
         "air-icon": HTMLAirIconElement;
         "air-input": HTMLAirInputElement;
         "air-previewer": HTMLAirPreviewerElement;
+        "air-rating": HTMLAirRatingElement;
+        "air-tag": HTMLAirTagElement;
         "air-text": HTMLAirTextElement;
-        "air-user-profile": HTMLAirUserProfileElement;
     }
 }
 declare namespace LocalJSX {
@@ -283,6 +354,7 @@ declare namespace LocalJSX {
     | 'outline'
     | 'solid';
         "suffixIcon"?: string;
+        "type"?: 'button' | 'submit' | 'reset';
     }
     interface AirButtonGroup {
         "customStyles"?: { [key: string]: string };
@@ -292,11 +364,14 @@ declare namespace LocalJSX {
     }
     interface AirCard {
         "cardTitle"?: string;
+        "center"?: boolean;
         "content"?: string;
         "imageUrl"?: string;
         "isHighlighted"?: boolean;
         "onCardClicked"?: (event: AirCardCustomEvent<void>) => void;
-        "size"?: 'small' | 'medium' | 'large';
+        "size"?: 'small' | 'medium' | 'large' | 'auto';
+    }
+    interface AirChat {
     }
     interface AirIcon {
         "color"?: string;
@@ -324,6 +399,40 @@ declare namespace LocalJSX {
     interface AirPreviewer {
         "customLink"?: string;
         "size"?: 'small' | 'medium' | 'large';
+    }
+    interface AirRating {
+        /**
+          * 自定义样式（CSS键值对对象）
+         */
+        "customStyle"?: { [key: string]: string };
+        /**
+          * 未选中图标
+         */
+        "emptyIcon"?: string;
+        /**
+          * 选中图标（直接使用air-icon的name）
+         */
+        "filledIcon"?: string;
+        "iconSet"?: IconSet;
+        /**
+          * 当前评分等级 (0~max)
+         */
+        "level"?: number;
+        /**
+          * 最大星数（1-10）
+         */
+        "max"?: number;
+        /**
+          * 评分变化事件
+         */
+        "onRatingChange"?: (event: AirRatingCustomEvent<number>) => void;
+    }
+    interface AirTag {
+        "closable"?: boolean;
+        "color"?: 'gray' | 'blue' | 'green' | 'yellow' | 'red';
+        "onAirClose"?: (event: AirTagCustomEvent<void>) => void;
+        "rounded"?: 'none' | 'md' | 'full';
+        "size"?: 'sm' | 'md';
     }
     /**
      * @name AirText
@@ -355,22 +464,18 @@ declare namespace LocalJSX {
       | 'body-emphasis'
       | 'fluid-heading';
     }
-    interface AirUserProfile {
-        "avatarSrc"?: string;
-        "editable"?: boolean;
-        "userBio"?: string;
-        "userName"?: string;
-    }
     interface IntrinsicElements {
         "air-avatar": AirAvatar;
         "air-button": AirButton;
         "air-button-group": AirButtonGroup;
         "air-card": AirCard;
+        "air-chat": AirChat;
         "air-icon": AirIcon;
         "air-input": AirInput;
         "air-previewer": AirPreviewer;
+        "air-rating": AirRating;
+        "air-tag": AirTag;
         "air-text": AirText;
-        "air-user-profile": AirUserProfile;
     }
 }
 export { LocalJSX as JSX };
@@ -387,9 +492,12 @@ declare module "@stencil/core" {
             "air-button": LocalJSX.AirButton & JSXBase.HTMLAttributes<HTMLAirButtonElement>;
             "air-button-group": LocalJSX.AirButtonGroup & JSXBase.HTMLAttributes<HTMLAirButtonGroupElement>;
             "air-card": LocalJSX.AirCard & JSXBase.HTMLAttributes<HTMLAirCardElement>;
+            "air-chat": LocalJSX.AirChat & JSXBase.HTMLAttributes<HTMLAirChatElement>;
             "air-icon": LocalJSX.AirIcon & JSXBase.HTMLAttributes<HTMLAirIconElement>;
             "air-input": LocalJSX.AirInput & JSXBase.HTMLAttributes<HTMLAirInputElement>;
             "air-previewer": LocalJSX.AirPreviewer & JSXBase.HTMLAttributes<HTMLAirPreviewerElement>;
+            "air-rating": LocalJSX.AirRating & JSXBase.HTMLAttributes<HTMLAirRatingElement>;
+            "air-tag": LocalJSX.AirTag & JSXBase.HTMLAttributes<HTMLAirTagElement>;
             /**
              * @name AirText
              * @description Typography for rendering headlines, paragraphs, captions, and body text with various style options.
@@ -397,7 +505,6 @@ declare module "@stencil/core" {
              * @example <air-text type="heading" level="1">Heading</air-text>
              */
             "air-text": LocalJSX.AirText & JSXBase.HTMLAttributes<HTMLAirTextElement>;
-            "air-user-profile": LocalJSX.AirUserProfile & JSXBase.HTMLAttributes<HTMLAirUserProfileElement>;
         }
     }
 }

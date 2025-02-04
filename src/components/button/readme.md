@@ -16,6 +16,7 @@
 | `size`       | `size`        |             | `"large" \| "medium" \| "small"`                                                               | `'medium'`  |
 | `state`      | `state`       |             | `"danger" \| "ghost" \| "info" \| "outline" \| "primary" \| "solid" \| "success" \| "warning"` | `'primary'` |
 | `suffixIcon` | `suffix-icon` |             | `string`                                                                                       | `''`        |
+| `type`       | `type`        |             | `"button" \| "reset" \| "submit"`                                                              | `'button'`  |
 
 
 ## Events
@@ -29,11 +30,13 @@
 
 ### Used by
 
+ - [air-chat](../chat)
  - [air-user-profile](../user-profile)
 
 ### Graph
 ```mermaid
 graph TD;
+  air-chat --> air-button
   air-user-profile --> air-button
   style air-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

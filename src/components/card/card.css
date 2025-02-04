@@ -1,7 +1,7 @@
 @use '../../styles/designToken.css' as *;
 
 .card {
-  @apply max-w-sm rounded-lg shadow-lg overflow-hidden bg-white transition-all duration-300 ease-in-out;
+  @apply rounded-lg shadow-lg overflow-hidden bg-white transition-all duration-300 ease-in-out;
   border: 2px solid transparent; /* 默认透明边框，避免闪烁 */
   border-radius: 12px; /* 使边角圆润 */
 }
@@ -25,11 +25,6 @@
 /* 卡片图像 */
 .card-image {
   @apply w-full h-48 object-cover rounded-t-lg; /* 上圆角 */
-}
-
-/* 卡片主体内容 */
-.card-body {
-  @apply p-4;
 }
 
 /* 卡片标题 */
@@ -79,4 +74,11 @@ slot[name='content']::slotted(*) {
 .card.large {
   width: 400px;
   padding: 1.25rem;
+}
+
+.card.auto {
+  @apply w-full;
+}
+.card.center {
+  @apply flex justify-center;
 }

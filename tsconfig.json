@@ -4,10 +4,7 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2017",
@@ -15,16 +12,15 @@
     "noUnusedParameters": true,
     "jsx": "react",
     "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
     "types": [
-      "@stencil/core/testing",  // 添加对 Stencil 测试工具的支持
-      "jest"  // 添加 Jest 类型支持
+      "@stencil/core/testing", // 添加对 Stencil 测试工具的支持
+      "jest" // 添加 Jest 类型支持
     ]
   },
   "include": [
     "src",
-    "node_modules/@stencil/core/testing"  // 确保 TypeScript 包含测试相关的文件
+    "node_modules/@stencil/core/testing" // 确保 TypeScript 包含测试相关的文件
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

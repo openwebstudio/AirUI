@@ -1,0 +1,26 @@
+/* 核心标签样式 */
+air-tag {
+  @apply inline-flex items-center leading-none transition-colors;
+  font-family: ui-sans-serif, system-ui, sans-serif; /* 使用系统字体 */
+}
+
+/* 关闭按钮动效 */
+air-tag .close-btn {
+  @apply transition-all duration-150 ease-out;
+}
+
+air-tag:hover .close-btn {
+  @apply scale-[1.15] opacity-100;
+}
+
+/* 禁用状态 */
+air-tag[disabled] {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* 打印优化 */
+@media print {
+  air-tag .close-btn {
+    @apply hidden;
+  }
+}
