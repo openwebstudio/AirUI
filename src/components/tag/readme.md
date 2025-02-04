@@ -31,10 +31,6 @@
 
 ## Dependencies
 
-### Used by
-
- - [air-resume](../resume)
-
 ### Depends on
 
 - [air-icon](../icon)
@@ -43,7 +39,6 @@
 ```mermaid
 graph TD;
   air-tag --> air-icon
-  air-resume --> air-tag
   style air-tag fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

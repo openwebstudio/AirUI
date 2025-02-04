@@ -11,7 +11,7 @@ import {
 @Component({
   tag: 'air-button',
   styleUrl: 'button.css',
-  shadow: true,
+  shadow: false,
 })
 export class AirButton {
   @Prop() type: 'button' | 'submit' | 'reset' = 'button';

@@ -3,7 +3,7 @@ import { Component, Prop, State, h, Element } from '@stencil/core';
 @Component({
   tag: 'air-input',
   styleUrl: 'input.scss',
-  shadow: true,
+  shadow: false,
 })
 export class AirInput {
   @Element() el: HTMLElement; // 获取组件的根元素

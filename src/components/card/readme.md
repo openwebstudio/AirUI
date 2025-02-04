@@ -24,19 +24,6 @@
 | `cardClicked` |             | `CustomEvent<void>` |
 
 
-## Dependencies
-
-### Used by
-
- - [air-resume](../resume)
-
-### Graph
-```mermaid
-graph TD;
-  air-resume --> air-card
-  style air-card fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -155,6 +155,12 @@ export namespace Components {
       | 'body-emphasis'
       | 'fluid-heading';
     }
+    interface AirUserProfile {
+        "avatarSrc": string;
+        "editable": boolean;
+        "userBio": string;
+        "userName": string;
+    }
 }
 export interface AirButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -295,6 +301,12 @@ declare global {
         prototype: HTMLAirTextElement;
         new (): HTMLAirTextElement;
     };
+    interface HTMLAirUserProfileElement extends Components.AirUserProfile, HTMLStencilElement {
+    }
+    var HTMLAirUserProfileElement: {
+        prototype: HTMLAirUserProfileElement;
+        new (): HTMLAirUserProfileElement;
+    };
     interface HTMLElementTagNameMap {
         "air-avatar": HTMLAirAvatarElement;
         "air-button": HTMLAirButtonElement;
@@ -307,6 +319,7 @@ declare global {
         "air-rating": HTMLAirRatingElement;
         "air-tag": HTMLAirTagElement;
         "air-text": HTMLAirTextElement;
+        "air-user-profile": HTMLAirUserProfileElement;
     }
 }
 declare namespace LocalJSX {
@@ -464,6 +477,12 @@ declare namespace LocalJSX {
       | 'body-emphasis'
       | 'fluid-heading';
     }
+    interface AirUserProfile {
+        "avatarSrc"?: string;
+        "editable"?: boolean;
+        "userBio"?: string;
+        "userName"?: string;
+    }
     interface IntrinsicElements {
         "air-avatar": AirAvatar;
         "air-button": AirButton;
@@ -476,6 +495,7 @@ declare namespace LocalJSX {
         "air-rating": AirRating;
         "air-tag": AirTag;
         "air-text": AirText;
+        "air-user-profile": AirUserProfile;
     }
 }
 export { LocalJSX as JSX };
@@ -505,6 +525,7 @@ declare module "@stencil/core" {
              * @example <air-text type="heading" level="1">Heading</air-text>
              */
             "air-text": LocalJSX.AirText & JSXBase.HTMLAttributes<HTMLAirTextElement>;
+            "air-user-profile": LocalJSX.AirUserProfile & JSXBase.HTMLAttributes<HTMLAirUserProfileElement>;
         }
     }
 }
