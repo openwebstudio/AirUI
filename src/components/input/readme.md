@@ -30,11 +30,13 @@
 
 ### Used by
 
+ - [air-chat](../chat)
  - [air-user-profile](../user-profile)
 
 ### Graph
 ```mermaid
 graph TD;
+  air-chat --> air-input
   air-user-profile --> air-input
   style air-input fill:#f9f,stroke:#333,stroke-width:4px
 ```

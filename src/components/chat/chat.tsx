@@ -103,7 +103,7 @@ export class AiChat {
               {msg.role !== 'user' && (
                 <air-avatar
                   size="small"
-                  src="../../assets/airui-logo.png"
+                  src="https://avatars.githubusercontent.com/u/193112739?s=96&v=4"
                   shape="circle"
                   class="hydrated"
                 ></air-avatar>
@@ -115,16 +115,6 @@ export class AiChat {
               >
                 {msg.content}
               </div>
-
-              {/* 只有用户发送消息时，显示头像 */}
-              {msg.role === 'user' && (
-                <air-avatar
-                  size="small"
-                  src="https://avatars.githubusercontent.com/u/146103794?v=4"
-                  shape="circle"
-                  class="hydrated"
-                ></air-avatar>
-              )}
             </div>
           ))}
         </div>
