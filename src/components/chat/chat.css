@@ -1,0 +1,12 @@
+/* ai-chat.css */
+:host {
+  --primary-color: #3b82f6;
+  --hover-color: #2563eb;
+}
+
+button {
+  background-color: var(--primary-color);
+}
+button:hover {
+  background-color: var(--hover-color);
+}

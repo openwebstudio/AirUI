@@ -20,11 +20,15 @@
 ### Used by
 
  - [air-previewer](../previwer)
+ - [air-rating](../ratingStars)
+ - [air-tag](../tag)
 
 ### Graph
 ```mermaid
 graph TD;
   air-previewer --> air-icon
+  air-rating --> air-icon
+  air-tag --> air-icon
   style air-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

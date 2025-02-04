@@ -11,9 +11,10 @@ import {
 @Component({
   tag: 'air-button',
   styleUrl: 'button.css',
-  shadow: true,
+  shadow: false,
 })
 export class AirButton {
+  @Prop() type: 'button' | 'submit' | 'reset' = 'button';
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
   @Prop() state:
     | 'primary'
@@ -68,6 +69,7 @@ export class AirButton {
             disabled: this.disabled, // 禁用状态样式
             selected: this.selected, // 选中状态样式
           }}
+          type={this.type} // 传递类型（submit、button、reset）
           aria-busy={this.loading ? 'true' : null}
           aria-label={ariaLabel}
           title={ariaLabel}
