@@ -6,7 +6,7 @@ import { Component, Prop, State, h, Element, Watch } from '@stencil/core';
   shadow: true,
 })
 export class AirPreviewer {
-  @Prop() size: 'small' | 'medium' | 'large' = 'medium';
+  @Prop() size: 'small' | 'medium' | 'large' | 'auto' = 'medium';
   @Prop() customLink: string = 'https://github.com/SisyphusZheng/Components'; // 默认链接
   @State() code: string = '';
   @State() showSource: boolean = false;
@@ -101,6 +101,7 @@ export class AirPreviewer {
         small: 'preview-small',
         medium: 'preview-medium',
         large: 'preview-large',
+        auto: 'preview-auto',
       }[this.size] || 'preview-medium';
 
     return (

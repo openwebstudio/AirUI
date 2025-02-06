@@ -94,7 +94,7 @@ export namespace Components {
     }
     interface AirPreviewer {
         "customLink": string;
-        "size": 'small' | 'medium' | 'large';
+        "size": 'small' | 'medium' | 'large' | 'auto';
     }
     interface AirRating {
         /**
@@ -411,7 +411,7 @@ declare namespace LocalJSX {
     }
     interface AirPreviewer {
         "customLink"?: string;
-        "size"?: 'small' | 'medium' | 'large';
+        "size"?: 'small' | 'medium' | 'large' | 'auto';
     }
     interface AirRating {
         /**
