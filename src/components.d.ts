@@ -94,7 +94,36 @@ export namespace Components {
     }
     interface AirPreviewer {
         "customLink": string;
-        "size": 'small' | 'medium' | 'large';
+        "size": 'small' | 'medium' | 'large' | 'auto';
+    }
+    interface AirRating {
+        /**
+          * 自定义样式（CSS键值对对象）
+         */
+        "customStyle": { [key: string]: string };
+        /**
+          * 未选中图标
+         */
+        "emptyIcon": string;
+        /**
+          * 选中图标（直接使用air-icon的name）
+         */
+        "filledIcon": string;
+        "iconSet": IconSet;
+        /**
+          * 当前评分等级 (0~max)
+         */
+        "level": number;
+        /**
+          * 最大星数（1-10）
+         */
+        "max": number;
+    }
+    interface AirTag {
+        "closable": boolean;
+        "color": 'gray' | 'blue' | 'green' | 'yellow' | 'red';
+        "rounded": 'none' | 'md' | 'full';
+        "size": 'sm' | 'md';
     }
     interface AirRating {
         /**
@@ -411,7 +440,41 @@ declare namespace LocalJSX {
     }
     interface AirPreviewer {
         "customLink"?: string;
-        "size"?: 'small' | 'medium' | 'large';
+        "size"?: 'small' | 'medium' | 'large' | 'auto';
+    }
+    interface AirRating {
+        /**
+          * 自定义样式（CSS键值对对象）
+         */
+        "customStyle"?: { [key: string]: string };
+        /**
+          * 未选中图标
+         */
+        "emptyIcon"?: string;
+        /**
+          * 选中图标（直接使用air-icon的name）
+         */
+        "filledIcon"?: string;
+        "iconSet"?: IconSet;
+        /**
+          * 当前评分等级 (0~max)
+         */
+        "level"?: number;
+        /**
+          * 最大星数（1-10）
+         */
+        "max"?: number;
+        /**
+          * 评分变化事件
+         */
+        "onRatingChange"?: (event: AirRatingCustomEvent<number>) => void;
+    }
+    interface AirTag {
+        "closable"?: boolean;
+        "color"?: 'gray' | 'blue' | 'green' | 'yellow' | 'red';
+        "onAirClose"?: (event: AirTagCustomEvent<void>) => void;
+        "rounded"?: 'none' | 'md' | 'full';
+        "size"?: 'sm' | 'md';
     }
     interface AirRating {
         /**

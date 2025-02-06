@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type                             | Default                                         |
-| ------------ | ------------- | ----------- | -------------------------------- | ----------------------------------------------- |
-| `customLink` | `custom-link` |             | `string`                         | `'https://github.com/SisyphusZheng/Components'` |
-| `size`       | `size`        |             | `"large" \| "medium" \| "small"` | `'medium'`                                      |
+| Property     | Attribute     | Description | Type                                       | Default                                         |
+| ------------ | ------------- | ----------- | ------------------------------------------ | ----------------------------------------------- |
+| `customLink` | `custom-link` |             | `string`                                   | `'https://github.com/SisyphusZheng/Components'` |
+| `size`       | `size`        |             | `"auto" \| "large" \| "medium" \| "small"` | `'medium'`                                      |
 
 
 ## Dependencies
