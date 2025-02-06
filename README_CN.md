@@ -20,7 +20,7 @@
 使用 npm 安装 AirComponents：
 
 ```bash
-npm install @aircomponents/ui
+npm install @airdesign/ui
 ```
 
 ## 使用示例通过CDN
