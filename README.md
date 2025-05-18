@@ -47,64 +47,6 @@ document.body.innerHTML = `
 `;
 ```
 
-### React
-
-```js
-import 'air-components';
-
-function App() {
-  return (
-    <div>
-      <air-button size="medium" variant="solid" color="primary">
-        Primary Button
-      </air-button>
-    </div>
-  );
-}
-
-export default App;
-```
-
-### Vue
-
-#### Vue Config
-
-```js
-module.exports = {
-  chainWebpack: config => {
-    config.module
-      .rule('vue')
-      .use('vue-loader')
-      .loader('vue-loader')
-      .tap(options => {
-        options.compilerOptions = {
-          isCustomElement: tag => tag.startsWith('air-'),
-        };
-        return options;
-      });
-  },
-};
-```
-
-#### USE Vue
-
-```js
-<template>
-  <div>
-    <air-button size="medium" variant="solid" color="primary">
-      Primary Button
-    </air-button>
-  </div>
-</template>
-
-<script>
-import 'air-components';
-export default {
-  name: 'App',
-};
-</script>
-```
-
 ## Development Notes
 
 ### This project is in early development; features and components are actively being built
